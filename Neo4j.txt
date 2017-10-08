@@ -1,0 +1,28 @@
+install Neo4j
+it  uses jdk8 and you need tor to access oracle site to get the jdk8
+
+Add repository
+wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
+echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
+sudo apt-get update
+
+install
+sudo apt-get install neo4j=3.2.2     (in my case 3.2.1 because it couldnt find 3.2.2 version)
+
+
+---------------------------------------
+
+
+wget -O - http://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
+
+echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
+
+
+
+
+
+sudo apt-get update
+
+
+
+sudo apt-get install neo4j=3.2.1
