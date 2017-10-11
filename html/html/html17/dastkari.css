@@ -1,0 +1,13 @@
+form  li{
+	list-style:decimal;
+}
+form input{
+		margin-bottom: 200px;
+
+}
+label{
+	display:block;
+	margin-bottom: 200px;
+}
+form ul{padding-left: 0px;
+}

@@ -1,0 +1,21 @@
+.kol{
+	min-width: 600px;
+	width:80%;
+	background-color: green;
+margin: auto;	
+}
+.rast{
+background-color: blue;
+float: left;
+width: 60%;
+}
+.rast,aside{
+	height: 600px;
+}
+aside{
+	float: right;
+background: red;
+width: 40%;
+}
+aside ul{list-style: none;
+	padding-left: 0px;}

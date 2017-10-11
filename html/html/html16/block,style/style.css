@@ -1,0 +1,11 @@
+label{
+	display: block;
+}
+li{	display: inline;
+	padding-left: 0px;
+
+}
+ul{
+
+	display: inline;
+}
