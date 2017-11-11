@@ -1,0 +1,547 @@
+@font-face {
+    font-family: "IRANSans";
+    src: url("fonts/IRANSans.eot?#") format("eot"), url("fonts/IRANSans.woff") format("woff"), url("fonts/IRANSans.ttf") format("truetype");
+}
+@font-face {
+    font-family: "IRANSans";
+    src: url("fonts/IRANSans.eot?#") format("eot"), url("fonts/IRANSans.woff") format("woff"), url("fonts/IRANSans.ttf") format("truetype");
+}
+
+body{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px;
+	line-height:2em;
+	text-align:right;
+	direction:rtl;text-align: justify;
+}
+h1, h2, h3, h4, h5, h6, .gkMenu ul li, .box.menu, .breadcrumbs > ul > li, .itemDate, .gk-big-btn, body button, .button, .readon, input[type="button"], input[type="submit"], .gkPriceTable dd.gkPrice, .gk-header1, .gk-header2, .gk-header3, .gkContactForm address, .gkNspPM-Portfolio2, .gkTabsWrap ol li, .gkSectionNav{
+	font-family:takwdfont2, Tahoma, Geneva, sans-serif!important;
+	font-size:13px;
+}
+#gkMainMenu, h1, h2, h3, h4, h5, h6, blockquote, .gkMenu > ul li div.childcontent header, .result-title, #gkMenuOverlayContent, .gk-newsletter input[type="button"], #gkMenuOverlayClose, #gkMenuOverlayHeader, #gkLogo.text, .gkIsWrapper-gk_storefront figcaption, .product-price span.PricesalesPrice, .gkTotal, .products .nspArt, .products .nspHeader, #gkSearch input{
+	font-family:takwdfont2, Tahoma, Geneva, sans-serif!important;
+	font-size:13px;
+}
+p{
+	line-height:2.2em;
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px;
+	 letter-spacing: 0.4px;padding: 10px;
+}
+td, th, tr{
+	text-align:right;
+}
+a:hover{
+	text-decoration:none!important;
+	color:#0D8FA2;
+}
+input, text, textarea, select, button, label{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	text-align:right!important;
+	font-weight:normal!important;
+}
+strong, legend, b{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:16px!important;
+	font-weight:normal!important;
+}
+h1{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:21px!important;
+	font-weight:normal!important;
+}
+h2{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:20px!important;
+	font-weight:normal!important;
+}
+h3{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:18px!important;
+	font-weight:normal!important;
+}
+h4{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:16px!important;
+	font-weight:normal!important;
+}
+h5{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.chzn-container .chzn-drop{
+	right: -9999px;
+	left: auto;
+}
+.chzn-container.chzn-with-drop .chzn-drop {
+  left: auto;
+  right: 0;
+}
+.chzn-container-single.chzn-container-single-nosearch .chzn-search {
+    right: -9999px;
+	left: auto;
+}
+.contact-form dl {
+    float: right;
+}
+/*********************************************************************/
+#menu {
+    float: right;
+}
+#gkLogo.text{
+	float: right;
+}
+.gkMenu > ul li div.childcontent{
+	direction: rtl;
+	text-align: right!important;
+}
+.gkMenu > ul > li{
+	float: right;
+}
+.gkMenu > ul > li > .childcontent .gkcol {
+    border-right: 1px solid #eeeeee;
+	border-left: none;
+    float: right;
+}
+.gkMenu > ul li div.childcontent li{
+	text-align: right;
+}
+.nspArt .tleft {
+    text-align: right;
+}
+.nspArt .fleft {
+    float: right;
+}
+.gkMenu .nspArt .readon{
+	text-align: right;
+	float: right;
+}
+.gkMenu > ul > li .childcontent .childcontent {
+    margin-right: 100px;
+	margin-left: 0;
+}
+.gkMenu > ul > li{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	font-weight:normal!important;
+}
+.gkMenu > ul li div.childcontent li{
+	font-size:11px!important;line-height: 20px;
+}
+.gkMenu > ul li div.childcontent .header{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.gkMenu > ul li div.childcontent {
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2)!important;
+}
+#gkMobileMenu {
+    float: right;
+}
+#gkMobileMenu select{
+	right: 0;
+	left: auto;
+}
+#gkLogo, #gkLogoSmall{
+	float: right;
+}
+#gkBannerTop{
+	float: left;
+}
+#gkMainMenu{
+	float: right;
+}
+#gkLogin{
+	float: left;
+}
+#gkSocial {
+    float: left;
+    margin-left: 10px;
+}
+#gkUpdates {
+    border-left: 1px solid #e5e5e5;
+	border-right: none;
+    float: right;
+    padding-right: 32px;
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:11px!important;
+	font-weight:normal!important;color: orangered;
+}
+#gkSearch {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;
+    float: left;
+}
+#gkSearch::after{
+	left: 20px;
+	right: auto;
+}
+#gkHighlights {
+    float: right;
+}
+.gkHighlighterInterface {
+    float: right;
+}
+.gkHighlighterInterface span.text {
+    float: right;
+    margin: 0 45px 0 0;
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.gkHighlighterInterface div {
+    left: 18px;
+	right: auto;
+}
+.gkHighlighterWrapper{
+	margin-right: 138px;
+	margin-left: auto;
+}
+#gkContent, #gkPageContent{
+    float: left;
+}
+#gkContent, #gkComponentWrap, #gkContentWrap, #gkContentWrap > div, #gkInset, #gkSidebarLeft, #gkSidebarRight, #gkBannerLeft, #gkBannerRight{
+    float: right;
+}
+#gkPageContent > div {
+    float: right;
+}
+#gkSidebarRight {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;
+}
+#gkBanners, #gkBanners + div, #gkContentWrap{
+    float: right;
+}
+#gkBannerLeft + #gkBannerRight {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;
+}
+#gkBannerLeft{
+	direction: ltr;
+}
+.nspLinks ul li h4 a{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.nspList li > .nspImageWrapper {
+    float: right;
+	margin: 0 0 0 25px!important;
+}
+.nspArt h4.nspHeader a{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:18px!important;
+	font-weight:normal!important;
+}
+.box.highlights .nspHeader, .box.highlights .nspHeader a{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:21px!important;
+	font-weight:normal!important;
+	direction: rtl;
+}
+.box.highlights .nspTitleArea h4, .box.highlights .nspTitleArea h4 a{
+	font-size:17px!important;
+	direction: rtl;
+}
+.box.highlights .nspText{
+    direction: rtl;
+    font-family: IRANSans,Tahoma,Geneva,sans-serif !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    text-align: justify;
+}
+.box.highlights .nspTopInterface .nspPrev, .box.highlights .nspTopInterface .nspNext{
+	direction: rtl;
+}
+.readon, .readon-button{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:14px!important;
+	font-weight:normal!important;
+}
+.readon::after{
+	left: -47px;
+	right: auto;
+}
+.gkTabsWrap ol li{
+	float: right;
+}
+.gkTabsWrap ol li{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:17px!important;
+	font-weight:normal!important;
+}
+.nspMain.nsp-list .nspHeader a{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.nspArt .nspImageWrapper{
+	margin: 0 0 0 24px!important;
+}
+.nspArt{
+float: right;
+}
+.gkTabsItem{
+	padding: 24px;
+}
+.nspArts.right {
+    float: right;
+}
+.nspLinksWrap.right {
+    float: left;
+}
+.nspLinksWrap.right .nspLinks {
+    padding-right: 64px;
+	padding-left: 0;
+}
+.nspLinks ul li p{
+	font-size:13px!important;
+}
+.nspArtScroll1 .nspArt .nspImageWrapper.gkResponsive{
+	margin: 0 0 28px!important;
+}
+.gkNspPM-VideoList h3{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:12px!important;
+	font-weight:normal!important;
+}
+.gkNspPM-VideoList strong{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	font-weight:normal!important;
+}
+.gkwMain .gkwCurrent {
+    float: right;
+}
+.gkwMainLeft {
+    float: right;
+    padding: 0 10px 0 30px;
+}
+.gkwMainRight {
+    float: right;
+}
+ul.gkwNextDays {
+    float: right;
+}
+.gkCols6 .box.gkmod-1, .gkCols6 .box.gkmod-2, .gkCols6 .box.gkmod-3, .gkCols6 .box.gkmod-4, .gkCols6 .box.gkmod-5, .gkCols6 .box.gkmod-6, .gkCols6 .box.gkmod-more {
+    float: right;
+}
+ul.gkwNextDays li{
+    float: right;
+	padding: 0 30px 0 20px !important;
+	border-style: none solid none none !important;
+    border-width: medium 1px medium medium !important;
+	border-color: -moz-use-text-color #e5e5e5 -moz-use-text-color -moz-use-text-color !important;
+}
+#gkSidebarLeft {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;
+}
+#gkFooterNav li:first-child {
+    border-right: medium none;
+}
+#gkFooterNav li {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;
+	font-size:13px!important;
+}
+.gkwMainRight p {
+    float: right;
+    margin: 0 0 0 18px;
+}
+.gkwMainLeft > *:first-child {
+    float: right;
+}
+.gkwTemp{
+	float: left;
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+}
+.gkwMainLeft > i, .gkwMainLeft > i::before {
+    margin: -9px -9px 0 0;
+}
+.gkwNextDays li > *:first-child {
+    float: right;
+    margin: 0 0 0 20px;
+}
+span.gkwDayDay, span.gkwDayNight {
+    float: right;
+    padding: 0 0 0 8px;
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:14px!important;
+}
+#gkFooterArea > div {
+    float: left;
+}
+#gkBackToTop{
+	font-size:14px!important;
+}
+#gkBackToTop::before{
+	padding: 0 0 0 10px;
+}
+.gk-newsletter strong{
+	font-size:15px!important;
+}
+.gk-newsletter input[type="button"] {
+    float: left;
+	margin: 0 10px 0 0;
+}
+.gk-newsletter input[type="email"] {
+    border: 1px solid #e5e5e5;
+    float: left;
+}
+.gk-newsletter strong {
+    float: left;
+    margin: 0 0 0 45px;
+}
+.login li {
+    float: right;
+    margin: 0 20px 0 0;
+}
+.login header {
+    margin: 6px -52px 42px;
+}
+section.login .login-fields label {
+    float: right;
+}
+button, .button, input.button, span.button, button.button, div.button, input[type="submit"], input[type="button"], .pagenav-prev a, .pagenav-next a, li.previous a, li.next a, .readon, #gkMainbody .itemReadMore, #gkMainbody .readmore > a, .button.invert:active, .button.invert:focus, .button.invert:hover{
+	float: right;
+	 margin: 0 2px 2px 5px;
+}
+section.login ul{
+	font-size:13px;
+}
+article header li{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:12px!important;
+	font-weight:normal!important;
+}
+#gkSidebarRight .box li{
+font-size:12px!important;
+}
+.itemTagsBlock, .itemRatingBlock{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:17px!important;
+	font-weight:normal!important;
+}
+small.itemDateModified, ul.itemTags{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	font-weight:normal!important;
+}
+.itemAuthorContent ul li a{
+  font-family: IRANSans,Tahoma,Geneva,sans-serif !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    line-height: 25px;
+    text-align: justify;
+}
+.itemAuthorContent ul li {
+    float: right;
+    margin: 0 0 32px 2%;
+}
+.itemNavigation span, .itemNavigation a{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.itemComments .itemCommentsList li span, .itemComments .itemCommentsList li span a{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:14px!important;
+	font-weight:normal!important;
+}
+//itemBody.gkHasAside {
+    padding-right: 145px;
+	padding-left: 0;
+}
+.itemRatingLog{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	font-weight:normal!important;
+}
+.gkNspPM-VideoList .gkItemsPage figure{
+	float: right;
+}
+.gkNspPM-VideoList .gkImageWrap {
+    margin: 0 0 0 35px;
+}
+#searchForm label, #searchForm input, #finder-search input {
+    float: right;
+    margin: 0 0 0 12px;
+}
+#searchForm fieldset legend {
+    float: right;
+    padding: 0 0 0 24px;
+}
+.search-results .result-title{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	font-weight:normal!important;
+}
+.gkListCols3 header h2, gkListCols4 header h2, gkListCols5 header h2, gkListCols6 header h2{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:18px!important;
+	font-weight:normal!important;
+}
+.gkListCols2 header h2{
+	font-family:IRANSans, Tahoma, Geneva, sans-serif!important;
+	font-size:19px!important;
+	font-weight:normal!important;
+}
+.k2FeedIcon a::before, a.k2FeedIcon::before {
+    margin: 0 0 0 12px;
+}
+.contact-address, .contact-contactinfo {
+    float: right;
+    margin: 0 0 32px 92px;
+}
+.contact-contactinfo div {
+    float: right;
+    margin: 0 0 0 52px;
+}
+dt.inline, dd.inline {
+    float: right !important;
+}
+.jicons-text{
+	font-size:15px!important;
+	font-weight:normal!important;
+}
+.itemContainer {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;padding:20px;
+}
+.itemContainer:first-child {
+    border-right: medium none;padding:40px;
+}
+.svg #gkLogo.cssLogo, .svg #gkLogoSmall.cssLogo{
+background-image: url("../images/style1/logo.png");
+}
+.latestView .itemsContainer {
+    border-right: 1px solid #e5e5e5;
+	border-left: none;
+}
+.latestView .itemsContainer:first-child, .latestView .clr + .itemsContainer {
+    border-right: medium none;
+}
+fieldset.filters > div > * {
+    float: right;
+    margin-left: 10px;
+	margin-right: 0;
+}
+.archive header {
+    text-align: right;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="url"], input[type="email"]{
+padding: 8px 20px !important;
+}
+.box.highlights .readon {
+    margin-right: 2px;
+	margin-left: 0;
+}
+#gkMobileMenu i{
+	left: 12px;
+	right: auto;
+}

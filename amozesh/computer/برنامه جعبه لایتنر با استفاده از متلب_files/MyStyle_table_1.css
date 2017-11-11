@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table.mybb_last_posts { 
+	width:100%; 
+	border-collapse:collapse; 
+	direction:ltr;
+}
+/* Zebra striping */
+table.mybb_last_posts tr:nth-of-type(odd) { 
+	background:#eee; 
+}
+table.mybb_last_posts th { 
+	background:#090; 
+	color:white; 
+	font-weight:bold; 
+}
+table.mybb_last_posts td, th { 
+	padding:6px; 
+	border:1px solid #ccc; 
+	text-align:left; 
+	direction:rtl;
+	text-align:right;
+}
+
+table.mybb_last_posts a{
+	color:#06C;
+	font-size:13px;
+}
+
+table.mybb_last_posts a:hover{
+	color:#F36;
+}

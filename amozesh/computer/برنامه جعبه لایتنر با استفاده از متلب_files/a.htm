@@ -1,0 +1,112 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+            #adhere iframe {
+                max-width:100%;
+				display: block;
+				margin: 0 auto;
+
+            }
+    </style>
+    <script src="a_data/fp.js"></script>
+</head>
+<body style="margin: 0; padding: 0;">
+<!--<script type="text/javascript" src="http://t.clickyab.com/t.js"></script>-->
+<script type="text/javascript">
+
+	if (!Array.prototype.indexOf)
+	{
+	  Array.prototype.indexOf = function(elt /*, from*/)
+	  {
+	    var len = this.length >>> 0;
+	
+	    var from = Number(arguments[1]) || 0;
+	    from = (from < 0)
+	         ? Math.ceil(from)
+	         : Math.floor(from);
+	    if (from < 0)
+	      from += len;
+	
+	    for (; from < len; from++)
+	    {
+	      if (from in this &&
+	          this[from] === elt)
+	        return from;
+	    }
+	    return -1;
+	  };
+	}
+
+	var a = document;
+	
+	function clickyab_ad(variable) { var query = window.location.search.substring(1); var vars = query.split("&"); for (var i = 0; i < vars.length; i++) { var pair = vars[i].split("="); if (pair[0] == variable) { return unescape(pair[1]); } ;} ;return false; };
+	function addtoq(pram, val){ if(val){ ad_url += "&" + pram + "=" + val; };};
+	function encodeuri(b){ if(typeof encodeURIComponent == "function"){ return encodeURIComponent(b);}else{return escape(b);};};
+
+	function getc(c_name)
+	{
+	var c_value = document.cookie;
+	var c_start = c_value.indexOf(" " + c_name + "=");
+	if (c_start == -1)
+	  {
+	  c_start = c_value.indexOf(c_name + "=");
+	  }
+	if (c_start == -1)
+	  {
+	  c_value = null;
+	  }
+	else
+	  {
+	  c_start = c_value.indexOf("=", c_start) + 1;
+	  var c_end = c_value.indexOf(";", c_start);
+	  if (c_end == -1)
+	  {
+	c_end = c_value.length;
+	}
+	c_value = unescape(c_value.substring(c_start,c_end));
+	}
+	return c_value;
+	}
+	
+	var ad_url = "http://a.clickyab.com/ads/show.php?a="+clickyab_ad('a');
+	addtoq("width",clickyab_ad('width'));
+	addtoq("height",clickyab_ad('height'));
+	addtoq("slot",clickyab_ad('slot'));
+	addtoq("adtype",clickyab_ad('ad_type'));
+	addtoq("domainname",clickyab_ad('domain'));
+	addtoq("logo",clickyab_ad('logo'));
+	addtoq("tracking",clickyab_ad('tracking'));
+	addtoq("eventpage",clickyab_ad('eventpage'));
+	//if(FlashDetect.installed) addtoq("flash","true");
+	if(navigator.cookieEnabled) addtoq("cook","true");
+	if(clickyab_ad('loc')==false) addtoq("loc",encodeuri(a.referrer));
+	else addtoq("loc",encodeuri(clickyab_ad('loc')));
+	addtoq("ref",encodeuri(clickyab_ad('ref')));
+
+    var fp = new Fingerprint();
+
+    var tid = fp.get();
+    if(tid > 0) addtoq("tid",tid);
+	
+	a.write('<div id="adhere"></div>');
+	var adcontent = '<iframe name="clickyab_ads_frame_in" width='+clickyab_ad('width')+' height='+clickyab_ad('height')+' frameborder=0 src="' + ad_url +'" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"></iframe>';	
+	function reloadad(){ document.getElementById("adhere").innerHTML = adcontent; }
+	if(clickyab_ad('adcount') == 1) var delay = 10;
+	if(clickyab_ad('adcount') > 1) var delay = 300;
+	setTimeout(reloadad, clickyab_ad('adcount')*delay);
+
+    /*
+	function clickyab_p(variable) { var query = window.location.search.substring(1); var vars = query.split("&"); for (var i = 0; i < vars.length; i++) { var pair = vars[i].split("="); if (pair[0] == variable) { return unescape(pair[1]); } ;} ;return false; };
+	function addtoq2(pram, val){ if(val){ p_url += "&" + pram + "=" + val; };};
+	var p_url = "http://p.clickyab.com/pixel/show.php?a="+clickyab_p('a');
+	addtoq2("conval",clickyab_p('conversion_value'));
+	addtoq2("loc",encodeuri(clickyab_p('loc')));
+	addtoq2("ref",encodeuri(clickyab_p('ref')));
+	addtoq2("tid",tid);
+	a.write('<iframe name="clickyab_pixel_frame_in" width=1 height=1 frameborder=0 src="' + p_url +'" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no">');
+	a.write('</iframe>');
+	*/
+		
+</script><div id="adhere"><iframe name="clickyab_ads_frame_in" src="a_data/show.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" frameborder="0" height="90" width="728"></iframe></div>
+
+</body></html>

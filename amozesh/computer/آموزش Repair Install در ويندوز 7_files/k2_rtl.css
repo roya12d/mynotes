@@ -1,0 +1,116 @@
+article header li{
+	float:right;
+	font-size:11px!important;
+}
+.itemLinks > div {
+    margin-left: 10px;
+	margin-right:0;
+}
+.itemTagsBlock, .itemRatingBlock{
+	font-size:12px;
+	font-family:Tahoma, Geneva, sans-serif
+}
+.itemBottom .itemRatingBlock span, .itemBottom .itemRatingBlock .itemRatingList, .itemBottom .itemRatingBlock .itemRatingForm ul.itemRatingList li, .itemLinks .itemCategory span, .itemLinks .itemAttachmentsBlock > span, .itemExtraFields ul li span.itemExtraFieldsLabel, .itemTagsBlock span, .itemTagsBlock ul li, .latestView .itemsContainer{
+	float:right;
+}
+.itemTagsBlock > span {
+    margin: 0  0 0 20px;
+}
+.itemAuthorData h3, .itemAuthorData h3 a{
+	font-family:takwdfont, Tahoma, Geneva, sans-serif!important;
+	font-size:18px!important;
+	font-weight:normal!important;
+}
+.itemAuthorBlock .itemAuthorDetails{
+	font-family:Tahoma, Geneva, sans-serif!important;
+	font-size:12px!important;
+}
+.itemAuthorBlock > .gkAvatar {
+    float: right;
+}
+.itemComments .itemCommentsList li > img, .k2LatestCommentsBlock img, .itemAuthorBlock > .gkAvatar > img{
+	float:right;
+}
+.itemAuthorBlock .itemAuthorDetails {    
+    margin: 0 130px 0 24px;
+}
+.itemRelatedContent li{
+	font-size:12px!important;
+	line-height: 1.7em;
+	font-family:Tahoma, Geneva, sans-serif
+}
+.k2Avatar {
+    float: right;
+    margin: 0 0 0 12px;
+}
+.k2LatestCommentsBlock div, .k2LatestCommentsBlock div strong, .k2LatestCommentsBlock div a{
+	font-family:takwdfont, Tahoma, Geneva, sans-serif!important;
+	font-size:16px!important;
+	font-weight:normal!important;
+}
+.k2LatestCommentsBlock div p a{
+	font-family:Tahoma, Geneva, sans-serif!important;
+	font-size:12px!important;
+}
+.k2LatestCommentsBlock div strong + span{
+	font-family:Tahoma, Geneva, sans-serif!important;
+	font-size:11px!important;
+}
+.k2TagCloudBlock a {    
+    float: right;    
+    margin: 0 0px 4px 4px;
+	font-size:12px;
+}
+.itemList article header h2, .itemList article header h2 a{
+	font-family:takwdfont, Tahoma, Geneva, sans-serif!important;
+	/*font-size:22px!important;*/
+	font-weight:normal!important;
+}
+.itemList .itemBody > ul > li{
+	float:right;
+	border-right: 1px solid #EEEEEE;
+	border-left:none;
+    margin: 0 24px 0 0;
+    padding: 0 24px 0 0;
+}
+.itemList .itemBody > ul > li.itemDate + li.itemComments{
+	float:left;
+}
+ul.itemTags{
+	font-size:12px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.itemComments p{
+	font-size:12px;
+	font-family:Tahoma, Geneva, sans-serif
+}
+.itemComments .itemCommentsList li > div {
+    margin: 0 70px 0 0!important;
+}
+.itemComments .itemCommentsList li span, .itemComments .itemCommentsList li span a{
+	font-family:takwdfont, Tahoma, Geneva, sans-serif!important;
+	font-size:17px!important;
+	font-weight:normal!important;
+}
+.itemBottom .itemRatingBlock span, .itemBottom .itemRatingBlock .itemRatingList, .itemBottom .itemRatingBlock .itemRatingForm ul.itemRatingList li, .itemLinks .itemCategory span, .itemLinks .itemAttachmentsBlock > span, .itemExtraFields ul li span.itemExtraFieldsLabel, .itemLinks .itemTagsBlock span, .itemLinks .itemTagsBlock ul li, .latestView .itemsContainer {
+    float: right;
+}
+.itemImageCaption, .itemImageCredits {
+    float: right;
+    padding: 12px 0 0 16px;
+}
+article header li {
+    padding-left: 20px;
+	padding-right: 0;
+}
+a.commentLink {
+    float: left;
+}
+.itemComments p{
+	font-family:takwdfont2, Tahoma, Geneva, sans-serif!important;
+	font-size:13px!important;
+	font-weight:normal!important;
+}
+.itemComments .itemCommentsList li > div {
+    margin: 0 92px 0 0!important;
+}

@@ -1,0 +1,327 @@
+
+        if(typeof(click_sabavision_banners) == 'undefined'){
+        var click_sabavision_banners = {};
+    }
+        if(typeof(messageLogs) == 'undefined'){
+        var messageLogs = {};
+    }
+
+
+    if(typeof(sabavisionFrameUrls ) == 'undefined'){
+        var sabavisionFrameUrls = {};
+        var sabavisionFrameUrlFirstFlag = true;
+    }
+
+
+
+    (function(url, lightboxFlag, scrolledFlag, fixedFlag, lightBoxJson, fixedBoxJson) {
+
+        var reloadTime = 60000;
+        var visitedTime = 1000;
+        var child;
+        var campid;
+        var campidArr = {};
+
+                eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('3 B=17.1l.S(/(M|N|U|1n|X|W)/);3 r=4(){F{8.V("Y");5 Z}H(e){5 12}};3 w=((\'11\'u 6)),y=(\'10\'u 6)||(6.v&&8 T v)||r();3 x=(s.L((s.O()*P)+1))*2;7(B||w||y){x+=1}4 1h(g,z,n){7(n){3 a=1g 1f();a.1i(a.1j()+(n*A*A*1k));3 d="; d="+a.1d()}q 3 d="";8.C=g+"="+z+d+"; 15=/"}4 18(g){3 j=g+"=";3 k=8.C.o(\';\');1b(3 i=0;i<k.9;i++){3 c=k[i];1a(c.19(0)==\' \')c=c.t(1,c.9);7(c.m(j)==0)5 c.t(j.9,c.9)}5 14}4 K(I,l){7(l){13+="&"+I+"="+l}};4 p(b){7(1c E=="4"){5 E(b)}q{5 16(b)}};3 h=\'\';7(((6.f.D).m("1e.J"))>0||((6.f.D).m("1m.J"))>0){h=p(8.f).o(\'%G\')[0]}q{F{h=p(6.Q.f.R).o(\'%G\')[0]}H(e){h=\'\'}};',62,86,'|||var|function|return|window|if|document|length|date|||expires||location|name|varloc||nameEQ|ca|val|indexOf|hours|split|encodeuri|else|touch|Math|substring|in|DocumentTouch|orientationChange|sabavisioniSmobileFlag|touchEvents|value|60|sabavisionisMobile|cookie|host|encodeURIComponent|try|23|catch|param|com|makeGetVar|floor|iPhone|iPod|random|100|parent|href|match|instanceof|iPad|createEvent|Mobile|BlackBerry|TouchEvent|true|ontouchstart|onorientationchange|false|url|null|path|escape|navigator|readCookie|charAt|while|for|typeof|toGMTString|sabavision|Date|new|createCookie|setTime|getTime|1000|userAgent|akairan|Android'.split('|'),0,{}));
+
+                function guid() {
+          function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+          }
+          return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+        }
+        var uniqId  = guid();
+
+                if(readCookie('_lightBox') && lightboxFlag){
+            return false;
+        }
+
+        url += (varloc)? "&loc=" + varloc : '';
+        url += (encodeuri(document.referrer))? "&ref=" + encodeuri(document.referrer):'';
+        url += '&bannerid=clicknet_vars_frame62786'+uniqId; 
+        var startStr = '', endStr = '';
+
+
+        var bannerType = 'normal'; 
+        window.removeElement = function(element) {
+            element && element.parentNode && element.parentNode.removeChild(element);
+        }
+
+        var disableInMobile = false;
+
+        var reponsiveFlag = '';
+
+                var appendedId = '';
+
+                if(fixedFlag && !document.getElementById('sabaFixedBox'+fixedBoxJson[0]+fixedBoxJson[1])){
+
+            startStr += '<div style="position: fixed; z-index: 99999; '+fixedBoxJson[0]+':0px; '+fixedBoxJson[1]+':0px; " id="sabaFixedBox'+fixedBoxJson[0]+fixedBoxJson[1]+'">';
+            startStr += '<div style="cursor:pointer;font-family: arial;color: #fff;background-color: #FF4343;float: right;position: absolute;right: 6px;margin-top: -9px;padding: 1px 3px;" class="sabascrolledboxClose" onclick="removeElement(document.getElementById(\'sabaFixedBox'+fixedBoxJson[0]+fixedBoxJson[1]+'\'));">X</div>';
+            endStr += '</div>';
+
+            bannerType = 'fixed';
+            disableInMobile = true;
+
+        }else if(lightboxFlag && !readCookie('_lightBox') && !document.getElementById('sabalightBox')){
+
+            startStr += '<style>.sabalightboxClose{font-family: arial; color:#fff; position: fixed; font-size: 40px; right: 60px; top: 30px; cursor: pointer; } .sabalightbox{ position:fixed; width:100%; height:100%; left: 0px; top:0px; background-color:#000 ;background-color: rgba(0,0,0,0.8); z-index:999999;  } .sabalightbox iframe{ left: 50%; top:50%; position:absolute; width: '+lightBoxJson['width']+'; height: '+lightBoxJson['height']+'; margin-top: '+lightBoxJson['marginTop']+'; margin-left: '+lightBoxJson['marginLeft']+'; }</style>';
+            startStr += '<div class="sabalightbox" id="sabalightBox" >';
+            startStr += '<div class="sabalightboxClose" onclick="removeElement(document.getElementById(\'sabalightBox\'));">X</div>';
+            endStr += '</div>';
+            createCookie('_lightBox','1',1);
+
+            bannerType = 'lightbox';
+            disableInMobile = true;
+
+        }else if(scrolledFlag && !document.getElementById('sabascrolledbox')){
+            startStr += '<style>.sabascrolledboxClose{font-family: arial;color: #fff;position: absolute;font-size: 16px;right: 11px;text-align: center;top: 10px;cursor: pointer;background-color: #DE1111;padding: 4px 8px; } .sabascrolledbox{     overflow: hidden; -webkit-transition: 0.25s; -moz-transition: 0.25s;-ms-transition: 0.25s; transition: 0.25s; height: 0px;position:fixed; width:100%; height:0px; left: 0px; top:0px; background-color: rgba(0,0,0,0.8); z-index:9999;  } .sabascrolledbox iframe{ left: 50%; top:0px; position:absolute; width: '+lightBoxJson['width']+'; height: '+lightBoxJson['height']+'; margin-left: '+lightBoxJson['marginLeft']+';  }</style>';
+            startStr += '<div class="sabascrolledbox" id="sabascrolledbox" >';
+            startStr += '<div class="sabascrolledboxClose" onclick="removeElement(document.getElementById(\'sabascrolledbox\')); document.removeEventListener(\'scroll\', sabaScrolledHandler);">X</div>';
+            endStr += '</div>';
+
+            sabaScrolledHandler = function(){ if(window.scrollY > 90){ document.getElementById('sabascrolledbox').style.height="95px"; }else{ document.getElementById('sabascrolledbox').style.height="0px"; } };
+            if (document.addEventListener) {
+              document.addEventListener('scroll', sabaScrolledHandler, false);
+            } else if (document.attachEvent)  {
+              document.attachEvent('scroll', sabaScrolledHandler);
+            }
+
+            disableInMobile = true;
+            bannerType = 'scrolled';
+
+        }else if((sabavisioniSmobileFlag % 2) || reponsiveFlag){
+
+            startStr += '<style>.h_iframe-clicknet_vars_frame62786'+uniqId+'{position:relative; max-width: 300px;max-height: 250px;} .h_iframe-clicknet_vars_frame62786'+uniqId+' .ratio {display:block;width:100%;height:auto;} .h_iframe-clicknet_vars_frame62786'+uniqId+' iframe {position:absolute;top:0;left:0;width:100%; height:100%;}</style>';
+            startStr += '<div class="h_iframe-clicknet_vars_frame62786'+uniqId+'">';
+            startStr += '<img class="ratio" src="https://click.sabavision.com/public/public/images/loadings/300x250.gif"/>';
+            endStr += '</div>';
+            url += '&responsive=true';
+        }
+
+        var disableDoubleClick = '';
+        if(disableDoubleClick){
+            url += '&disable_double_click=true';
+        }
+
+
+
+                if((sabavisioniSmobileFlag % 2) && disableInMobile){
+            return false;
+        }
+
+                click_sabavision_banners['clicknet_vars_frame62786'+uniqId] = {type: bannerType,screen_visable: false};
+
+                if (window.addEventListener) {
+          window.addEventListener('message', receiveMessage, false);
+        } else if (window.attachEvent)  {
+          window.attachEvent('message', receiveMessage);
+        }
+
+        function receiveMessage(event){
+
+            child = event.source;
+            campid = event.data.campid;
+
+
+                        if(messageLogs[event.timeStamp]){
+                return false;
+            }
+            messageLogs[event.timeStamp] = true;
+
+
+            var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+            if(true || origin.substr(0,27) == 'http://click.sabavision.com'){
+                var data = event.data;
+                actionHandler(data);
+            }
+        }
+
+        function actionHandler(action){
+                        switch(action.name){
+                case 'banner-not-found':
+
+                    bannerId = action.data.id;
+                    removeElement(document.getElementById(bannerId));
+
+                                        if(click_sabavision_banners[bannerId].type == 'lightbox'){
+                        document.cookie = '_lightBox' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                        removeElement(document.getElementById('sabalightBox'));
+                    }
+
+                break;
+                case 'banner-loaded':
+                    bannerId = action.data.id;
+                    bannerType = action.data.type;
+                    //addIframeSrc();
+                                        setTimeout(function(){ window.scrollTo(0,window.scrollY+1); window.scrollTo(0,window.scrollY-1); } ,10);
+                break;
+                case 'banner-clicked':
+                    bannerId = action.data.id;
+                    frameReloadFlag = false;
+                    if(window.location.hash=='#debug'){ console.log('clicked on banner  , id: '+bannerId); }
+                    changeIframeBanner(bannerId);
+                break;
+            }
+        }
+
+
+                function posY(elm) {
+            var test = elm,top = 0;
+            while (!!test && test.tagName.toLowerCase() !== "body") {
+                top += test.offsetTop;
+                test = test.offsetParent;
+            }
+            return top;
+        }
+
+        function viewPortHeight() {
+            var de = document.documentElement;
+            if (!!window.innerWidth) {
+                return window.innerHeight;
+            } else if (de && !isNaN(de.clientHeight)) {
+                return de.clientHeight;
+            }
+            return 0;
+        }
+
+        function scrollY() {
+            if (window.pageYOffset) {
+                return window.pageYOffset;
+            }
+            return Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+        }
+
+        function elementH(elm) {
+            return elm.offsetHeight;
+        }
+
+        function isHidden(el) {
+            return (el.offsetParent === null);
+        }
+
+                var timeFlag = true, frameReloadFlag = true;
+        var timerVar;
+        var nextBanner;
+
+        function bannerIsVisable(elmId) {
+                        if(window.location.hash=='#debug'){ console.log('banner visited , id: '+elmId); }
+            clearInterval(timerVar);
+            click_sabavision_banners[elmId]['screen_visable'] = true;
+
+                        if(!campidArr[campid]){
+                campidArr[campid] = true;
+                var postData = {
+                    'campid': campid
+                };
+                if(child){
+                    child.postMessage({'name':'pure_view','data':postData}, 'https://click.sabavision.com/get_camp.php?id=37442&banner_position=left-top')
+                }
+            }
+
+
+            if(frameReloadFlag){
+                frameReloadFlag = false;
+                if(window.location.hash=='#debug'){ console.log('banner ready for reload , id: '+elmId); }
+                //TODO: simple
+                //nextBanner = setInterval(function() {
+                //    if(document.getElementById(elmId)){
+                //      changeIframeBanner(elmId);
+                //    }
+                //}, reloadTime);
+            }
+
+
+        }
+
+        function changeIframeBanner(elmId){
+                        if(window.location.hash=='#debug'){ console.log('reload banner, id: '+elmId); }
+            //TODO: simple
+            //clearInterval(nextBanner);
+            //setTimeout(function(){
+            //    var iframe = document.getElementById(elmId);
+            //    iframe.src = iframe.src;
+            //    frameReloadFlag = true;
+            //    checkvisible(document.getElementById('clicknet_vars_frame62786'+uniqId));
+            //},(Math.floor((Math.random() * 10) + 1)) * 100);
+            timeFlag = true;
+            click_sabavision_banners[elmId]['screen_visable'] = false;
+
+        }
+
+        function checkvisible(elm) {
+            if(typeof(elm) == 'string'){
+                elm = document.getElementById(elm);
+            }
+            var elmId = elm.id;
+            var windowHeight = viewPortHeight(),
+                elementHeight = elementH(elm),
+                scrollPosition = scrollY(),
+                elementY = posY(elm);
+            var elemEnd = elementY + elementHeight - (elementHeight / 2);
+            var elemStart = elementY + (elementHeight / 2);
+            var pageStart = scrollPosition;
+            var pageEnd = scrollPosition + windowHeight;
+
+            if ((elemStart >= pageStart) && (elemEnd <= pageEnd)) {
+                if (timeFlag) {
+                                        if(window.location.hash=='#debug'){ console.log('banner in screen '+elm.id); }
+                    timeFlag = false;
+                    timerVar = setInterval(function() {
+                        clearInterval(timerVar);
+                        bannerIsVisable(elmId);
+                    }, visitedTime);
+
+                }
+            } else {
+                clearInterval(timerVar);
+                timeFlag = true;
+            }
+        }
+
+        if(bannerType == 'normal'){
+            if (document.addEventListener) {
+              document.addEventListener('scroll', function() {
+                checkvisible(document.getElementById('clicknet_vars_frame62786'+uniqId));
+               }, false);
+            } else if (document.attachEvent)  {
+              document.attachEvent('scroll', function() {
+                checkvisible(document.getElementById('clicknet_vars_frame62786'+uniqId));
+                });
+            }
+
+        }else{
+                    }
+
+        //Object.keys(sabavisionFrameUrls).length ||
+        //if(!sabavisionFrameUrlFirstFlag){
+        //    sabavisionFrameUrls["clicknet_vars_frame62786"+uniqId] = url+'&vt='+sabavisioniSmobileFlag;
+        //    url = 'https://click.sabavision.com/blank.html?';
+        //}
+        sabavisionFrameUrlFirstFlag = false;
+
+        if(appendedId){
+            document.getElementById(appendedId).innerHTML += startStr+'<iframe frameborder="0" allowfullscreen name="clicknet_vars_frame62786'+uniqId+'" id="clicknet_vars_frame62786'+uniqId+'" width="300" height="250" frameborder=0 src="'+url+'&vt='+sabavisioniSmobileFlag+'" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>'+endStr;
+        }else{
+            document.write(startStr+'<iframe frameborder="0" allowfullscreen name="clicknet_vars_frame62786'+uniqId+'" id="clicknet_vars_frame62786'+uniqId+'" width="300" height="250" frameborder=0 src="'+url+'&vt='+sabavisioniSmobileFlag+'" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>'+endStr);
+        }
+
+        //TODO: simple
+        //checkvisible(document.getElementById('clicknet_vars_frame62786'+uniqId));
+
+    })("https://click.sabavision.com/showcamp.php?w=300&h=250&posdata[1]=37442-c-&postype=other&t=1462226738&ct=8c7bd31e040f6530675f9cc61a0db22c695b0c63",false,false,false,{'marginTop': '-125px', 'marginLeft': '-150px', 'width': '300px', 'height': '250px'},"");
+
+    function addIframeSrc(){
+
+        var flg = true;
+        for(i in sabavisionFrameUrls){
+            if(flg){
+                document.getElementById(i).setAttribute('src', sabavisionFrameUrls[i]);
+                delete sabavisionFrameUrls[i];
+                flg = false;
+            }
+        }
+    }
+

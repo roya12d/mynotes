@@ -1,0 +1,1151 @@
+                                                                <!DOCTYPE html><html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="UTF-8">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>نحوه اعتبارسنجی منوی بازشو select در فرم php | عصرعلم</title>
+<meta name="viewport" content="width=device-width">
+<link rel="pingback" href="http://www.asreelm.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="عصرعلم &raquo; ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP خوراک دیدگاه‌ها" href="http://www.asreelm.com/dropdown-menu-validation/feed/" />
+<script type='text/javascript' src='http://www.asreelm.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.asreelm.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"http:\/\/www.asreelm.com\/wp-admin\/admin-ajax.php","position_in_cart":"","already_in_cart_message":"\u0634\u0645\u0627 \u0627\u06cc\u0646 \u0645\u0648\u0631\u062f \u0631\u0627 \u0642\u0628\u0644\u0627\u064b \u0628\u0647 \u0633\u0628\u062f\u062e\u0631\u06cc\u062f \u062e\u0648\u062f\u062a\u0627\u0646 \u0627\u0636\u0627\u0641\u0647 \u06a9\u0631\u062f\u06cc\u062f","empty_cart_message":"\u0633\u0628\u062f\u062e\u0631\u06cc\u062f \u062e\u0627\u0644\u06cc \u0627\u0633\u062a!","loading":"\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc","select_option":"\u0644\u0637\u0641\u0627\u064b \u06cc\u06a9 \u06af\u0632\u06cc\u0646\u0647 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f","ajax_loader":"http:\/\/www.asreelm.com\/wp-content\/plugins\/easy-digital-downloads\/assets\/images\/loading.gif","is_checkout":"0","default_gateway":"zarinpal","redirect_to_checkout":"1","checkout_page":"http:\/\/www.asreelm.com\/payment\/","permalinks":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.asreelm.com/wp-content/plugins/easy-digital-downloads/assets/js/edd-ajax.min.js?ver=2.1.10'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.asreelm.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.asreelm.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='آموزش جامع ایجاد منوی آبشاری با استفاده از CSS در طراحی سایت' href='http://www.asreelm.com/css-dropdown-navigation-menu/' />
+<link rel='next' title='وارد کردن Header با عنوان و شماره متفاوت برای هر صفحه در ورد' href='http://www.asreelm.com/different-title-number-word-header/' />
+<link rel='shortlink' href='http://www.asreelm.com/?p=9042' />
+
+<!-- This site is using AdRotate v3.10.13 to display their advertisements - https://www.adrotateplugin.com/ -->
+
+<!-- All in One SEO Pack 2.2.3.1 by Michael Torbert of Semper Fi Web Design[190,255] -->
+<meta name="description"  content="در حین ساخت فرمهای HTML، یکی از مواردی که ممکن است به آن نیاز داشته باشید، فیلدهای منویی بازشو یا Drop Down هستند. اینگونه فیلدها معمولا به این صورت میباشند که" />
+
+<meta name="keywords"  content="html,آموزش ساخت فرم,اعتبارسنجی فرم,دستورات شرطی,فرم php,آموزش html,آموزش php" />
+
+<link rel="canonical" href="http://www.asreelm.com/dropdown-menu-validation/" />
+<!-- /all in one seo pack -->
+<link rel="stylesheet" type="text/css" href="http://www.asreelm.com/wp-content/themes/asreelm-2014/style.css">
+<!-- Fonts -->
+<link rel="stylesheet" type="text/css" href="http://www.asreelm.com/wp-content/themes/asreelm-2014/fonts/style.css">
+<!-- End Fonts -->
+<link rel="Shortcut Icon" type="image/x-icon" href="http://www.asreelm.com/favicon.ico" />
+<link rel="apple-touch-icon" href="http://www.asreelm.com/apple-touch-icon.png" />
+<link rel="author" href="https://plus.google.com/115621615268639063513" />
+<meta name="author" content="Sajjad Panahi (info@asreelm.com)" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.asreelm.com/feed/" />
+<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.asreelm.com/feed/rss/" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.asreelm.com/feed/atom/" />
+<!--[if lt IE 9]>
+<script src="http://www.asreelm.com/wp-content/themes/asreelm-2014/js/html5.js"></script>
+<![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<script type="text/javascript">
+/*<![CDATA[*/
+function showHide(d){
+ var div = document.getElementById(d);
+ if (showHide.div&&div!=showHide.div){
+  showHide.div.style.display='none';
+ }
+ div.style.display = div.style.display != 'block'?'block':'none';
+ showHide.div=div;
+}
+function hideStuff(id){
+document.getElementById(id).style.display='none';}
+function ShowStuff(id){
+document.getElementById(id).style.display='';}
+/*]]>*/
+</script>
+</head>
+<body class="rtl single single-post postid-9042 single-format-standard">
+<div id="top"></div>
+<div id="page">
+<div class="header">
+	<header>
+    	<!-- Top Bar -->
+    	<div class="top-bar">
+        <!-- Container -->
+        <div class="container">
+        
+        
+        <!-- Top Nav -->
+        <div class="top-nav">
+        <div class="top-nav-item"><a href="http://www.asreelm.com/" title="صفحه نخست"><span class="icon-home large icon"></span><span class="icon-text">خانه</span></a></div>
+        <div class="top-nav-item"><a href="http://www.asreelm.com/write-for-us/" title="ارسال مطلب برای عصرعلم"><span class="icon-newspaper large icon"></span><span class="icon-text">ارسال مطلب</span></a></div>
+        <div class="top-nav-item"><a href="http://www.asreelm.com/contact-us/" title="تماس مستقیم با مدیریت سایت"><span class="icon-envelope large icon"></span><span class="icon-text">تماس با ما</span></a></div>
+        <div class="top-nav-item"><a href="http://www.asreelm.com/about-us/" title="درباره عصرعلم و اهداف ما بدانید!"><span class="icon-profile large icon"></span><span class="icon-text">درباره ما</span></a></div>
+        </div>
+        <!-- End Top-nav -->
+        <!-- Search Box -->
+        <div class="search-box">
+        <form role="search" method="get" id="searchform" class="searchform" action="http://www.asreelm.com">
+		<input class="search-field" type="text" value="" name="s" id="s" placeholder="جستجو در سایت" />
+		<button class="icon-search" type="submit" id="searchsubmit"></button>
+        </form>
+        </div>
+        <!-- End Search Box -->
+         <!-- Follow Us -->
+        <div class="follow-us radius7">
+      	<div class="apps-item googleplus">
+        <a href="https://plus.google.com/+Asreelm/" title="به جمع ما در گوگل پلاس بپیوندید!"><span class="icon-googleplus2 large"></span><span class="apps-text">گوگل +</span></a>
+        </div>
+        <div class="apps-item facebook">
+            <a href="https://www.facebook.com/AsreElm" title="در فیسبوک هوادار عصرعلم شوید!"><span class="icon-facebook2 large"></span><span class="apps-text">فیسبوک</span></a>
+        </div>
+        <div class="apps-item twitter">
+            <a href="https://twitter.com/asreelm" title="پیگیری عصرعلم در توییتر"><span class="icon-twitter2 large"></span><span class="apps-text">توئیتر</span></a>
+        </div>
+        <!--
+        <div class="apps-item android">
+        	<a href="#" title="اپلیکیشن عصرعلم برای اندروید"><span class="icon-android large"></span><span class="apps-text">اندروید</span></a>
+        </div>
+        -->
+        </div>
+        <!-- End Follow Us -->
+         
+        </div>
+        <!-- End Container -->
+        </div>
+        <!-- End Top Bar -->
+        
+		<!-- Container -->
+        <div class="container">
+        <!-- Logo Area -->
+        <div class="logo-area w">
+        	<div class="logo">
+            <h1 class="site-title"><img src="http://www.asreelm.com/wp-content/themes/asreelm-2014/images/logo.png" height="200" width="214" alt="عصرعلم"></h1>
+            <h2 class="site-description">علمی آموزشی سرگرمی دانلود</h2>
+            </div>
+        </div>
+        <!-- End Logo Area -->
+        
+        <!-- Site Networks -->
+        <div class="network-area w desktop">
+        	<div class="network-item cart-postal">
+            	<a href="http://www.asreelm.com/ecards/" target="_blank">
+                <div class="icon-newspaper network-icon"></div>
+                <p class="network-text roya">ارسال کارت پستال</p>
+                </a>
+            </div>
+            <div class="network-item design">
+            	<a href="#" target="_blank">
+            	<div class="network-icon"></div>
+                <p class="network-text roya"></p>
+                </a>
+            </div>
+            <div class="network-item question">
+            	<a href="http://www.answer.asreelm.com" target="_blank">
+                <div class="icon-question network-icon"></div>
+                <p class="network-text roya">پرسش و پاسخ</p>
+                </a>
+            </div>
+            <div class="network-item earn">
+            	<a href="http://store.asreelm.com/">
+            	<div class="icon-cart network-icon"></div>
+                <p class="network-text roya">فروشگاه اینترنتی</p>
+                </a>
+            </div>
+            <div class="network-item donate">
+            	<a href="http://www.asreelm.com/support-us/">
+            	<div class="icon-heart network-icon"></div>
+                <p class="network-text roya">حمایت از عصرعلم</p>
+                </a>
+            </div>
+            <div class="network-item shop">
+            	<a href="http://www.asreelm.com/products/">
+            	<div class="icon-gift network-icon"></div>
+                <p class="network-text roya">بازارچه عصرعلم</p>
+                </a>
+            </div>
+        </div>
+        <!-- End Site Networks -->
+       	</div>
+        <!-- End Container --> 
+       	<div class="clear"></div>
+        
+        <!-- Navigation -->
+        <div class="navigation">
+<nav>
+<div class="container">
+<a href="javascript:showHide('lifestyle');" class="w nav-main-item radius7">دانستنی ها و شیوه زندگی</a>
+<a href="javascript:showHide('learning');" class="w nav-main-item radius7">آموزشهای رایگان</a>
+<a href="javascript:showHide('featured');" class="w nav-main-item radius7">مطالب ویژه و مجموعه ها</a>
+<div class="clear"></div>
+<div class="nav-content w" id="lifestyle">
+<ul class="main-nav lifestyle-category">
+<li class="parent-item"><a href="http://www.asreelm.com/category/lifestyle/">دانستنیها و شیوه زندگی</a>
+<button onclick="hideStuff('lifestyle')" class="close-menu radius7" value="بستن منو"> بستن منو</button>
+<div class="clear"></div>
+<div class="w menu-col">
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/category/lifestyle/health/">بهداشت عمومی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/diseases/">بیماری ها</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/matrimony/">زناشویی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/women/">زنان</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/men/">مردان</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/kids/">کودکان و نوزادان</a></li>
+</ul>
+</div>
+
+<div class="w menu-col">
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/category/lifestyle/pet-animals/">حیوانات خانگی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/fitness/">تناسب اندام</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/beauty/">زیبایی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/nutrition/">تغذیه</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/mental-health/">روانشناسی و بهداشت روان</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/consultation/">مشاوره</a></li>
+
+</ul>
+</div>
+
+<div class="w menu-col">
+<ul class="sub-menu">
+
+<li><a href="http://www.asreelm.com/category/lifestyle/technology/">تکنولوژی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/basic-knowledge/">اطلاعات عمومی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/fun/">تفریح و سرگرمی</a></li>
+<li><a href="http://www.asreelm.com/category/lifestyle/first-aid/">کمک های اولیه</a></li>
+<li class="mobile"><button onclick="hideStuff('lifestyle')" class="close-menu radius7" value="بستن منو"> بستن منو</button></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="nav-content w" id="learning">
+<ul class="main-nav lifestyle-category">
+<li class="parent-item"><a href="http://www.asreelm.com/category/learning/">آموزشهای رایگان</a>
+<button onclick="hideStuff('learning')" class="close-menu radius7" value="بستن منو"> بستن منو</button>
+<div class="clear"></div>
+
+<div class="w menu-col">
+<span class="submenu-title">رایانه و اینترنت</span>
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/category/learning/pc-internet/">کامپیوتر</a></li>
+<li><a href="http://www.asreelm.com/category/learning/microsoft-word/">آموزش ورد</a></li>
+<li><a href="http://www.asreelm.com/category/learning/microsoft-excel/">آموزش اکسل</a></li>
+<li><a href="http://www.asreelm.com/category/learning/powerpoint/">آموزش پاورپوینت</a></li>
+<li><a href="http://www.asreelm.com/category/learning/photoshop/">آموزش فتوشاپ</a></li>
+</ul>
+</div>
+
+<div class="w menu-col">
+<span class="submenu-title">طراحی سایت</span>
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/category/learning/web-design/wordpress/">وردپرس</a></li>
+<li><a href="http://www.asreelm.com/category/learning/web-design/html-tut/">HTML</a></li>
+<li><a href="http://www.asreelm.com/category/learning/web-design/css-tut/">CSS</a></li>
+<li><a href="http://www.asreelm.com/category/learning/web-design/javascript/">جاوااسکریپت</a></li>
+<li><a href="http://www.asreelm.com/category/learning/web-design/php-tut/">PHP</a></li>
+<li><a href="http://www.asreelm.com/category/learning/web-design/weblog/">وبلاگ نویسی</a></li>
+<li><a href="http://www.asreelm.com/category/learning/web-design/seo/">بهینه سازی (سئو)</a></li>
+</ul>
+</div>
+
+<div class="w menu-col">
+<span class="submenu-title">ابزارهای آموزشی</span>
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/category/learning/tools/dictionary/">لغت نامه</a></li>
+<li><a href="http://www.asreelm.com/category/learning/tools/software/">نرم افزار</a></li>
+<li><a href="http://www.asreelm.com/category/learning/tools/multimedia/">ویدئو کلیپ آموزشی</a></li>
+<li><a href="http://www.asreelm.com/category/learning/tools/ebook/">کتاب الکترونیک</a></li>
+<li><a href="http://www.asreelm.com/category/learning/tools/audio-book/">کتاب صوتی</a></li>
+<li class="mobile"><button onclick="hideStuff('learning')" class="close-menu radius7" value="بستن منو"> بستن منو</button></li>
+</ul>
+</div>
+
+</li>
+</ul>
+
+
+
+
+
+</div>
+<div class="nav-content w" id="featured">
+<ul class="main-nav lifestyle-category">
+<li class="parent-item"><a href="#">مطالب ویژه و مجموعه ها</a>
+<button onclick="hideStuff('featured')" class="close-menu radius7" value="بستن منو"> بستن منو</button>
+<div class="clear"></div>
+<p>با استفاده از این بخش میتوانید به مطالب ویژه و بایگانی مطالبی که در قالب مجموعه های چند قسمتی در بخش آموزشهای رایگان ارائه شده اند دسترسی پیدا کنید.</p>
+<div class="w menu-col">
+<span class="submenu-title">ویژه ها</span>
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/featured/microsotf-word-top-tips/">مجموعه آموزشهای کاربردی ورد</a></li>
+</ul>
+</div>
+
+<div class="w menu-col">
+<span class="submenu-title">مجموعه ها و دوره ها</span>
+<ul class="sub-menu">
+<li><a href="http://www.asreelm.com/series/template-design-series/">دوره آموزش طراحی قالب استاتیک</a></li>
+<li><a href="http://www.asreelm.com/series/blogfa-template-series/">دوره آموزش طراحی قالب بلاگفا</a></li>
+<li><a href="http://www.asreelm.com/series/learn-php/">دوره آموزش زبان برنامه نویسی PHP</a></li>
+<li><a href="http://www.asreelm.com/series/wordpress-step-by-step/">دوره آموزش گام به گام وردپرس</a></li>
+</ul>
+</div>
+
+</li>
+</ul>
+
+
+
+
+
+</div>
+</div>
+</nav>
+</div>        <!-- End Navigation -->
+    </header>
+</div>
+                            <!-- End Header -->
+<div class="clear"></div>
+
+<!-- Top Text ADS -->
+<div class="white-line desktop"></div>
+<div class="top-text-ads-area">
+<div class="container">
+	<div class="w top-text-ads asreelm-pink-bg">
+    	<a href="http://www.asreelm.com/advertise/" rel="nofollow">محل تبلیغ شما</a>
+    <p>نمایش تبلیغات متنی شما با قیمت مناسب. برای مشاهده تعرفه تبلیغات کلیک کنید.</p>
+    </div>	
+    <div class="w top-text-ads asreelm-orange-bg">
+    <a href="http://uploadboy.com/free671.html" rel="nofollow">کسب درآمد از آپلود</a>
+    <p>فایل آپلود کنید، با دیگران به اشتراک بگذارید و پولدار شوید!</p>
+    </div>
+    <div class="w top-text-ads asreelm-green-bg">
+    <a href="http://my.mihanwebhost.com/aff.php?aff=1509" rel="nofollow">میهن وب هاست</a>
+    <p>هاست پر سرعت و ارزان. تحویل فوری! همین حالا سایت خود را راه اندازی کنید!</p>
+    </div>	
+    <div class="w top-text-ads asreelm-blue-bg">
+    		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-10', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-10"><a class="gofollow" data-track="MTAsMCwwLDE=" href="http://uploadboy.com/6ljdb311yk64.html" target="_blank" rel="nofollow">مجموعه رایگان تصاویر زمینه</a>
+<p>دانلود رایگان پکیج تصاویر زمینه و background با کیفیت و زیبا برای کامپیوتر و تبلت.</p></div>    </div>
+</div>
+</div>
+<div class="white-line desktop"></div>
+<div class="space30"></div>
+<!-- Start of Banner Ads -->
+
+<div class="desktop">
+<div class="aligncenter">
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-7', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-7"><a class="gofollow" data-track="NywwLDAsMQ==" href="http://www.telesmchat.org/" rel="nofollow" target="_blank"><img src="http://www.asreelm.com/uploads/2014/10/telesmchat.gif" height="60" width="468" alt="طلسم چت" /></a></div><!--<a href=""><img src="/ads/500x60.png" height="60" width="500" alt="banner"></a>-->
+</div>
+<div class="space30"></div>
+</div>
+
+<!-- .Desktop -->
+<!-- End of Banner Ads --><!-- End Top Text ADS -->
+<div class="clear"></div>
+<!-- Main Area -->
+<div class="container">
+
+<!-- main -->
+<div class="w main">
+<div class="breadcrumbs gishadow radius7">
+<div class="crumbs">مسیر شما در سایت: <a class="home" href="http://www.asreelm.com" title="خانه">صفحه نخست</a> &raquo; <a href="http://www.asreelm.com/category/learning/">آموزشی</a> &raquo; <a href="http://www.asreelm.com/category/learning/web-design/">طراحی سایت</a> &raquo; <a href="http://www.asreelm.com/category/learning/web-design/html-tut/">آموزش HTML</a> &raquo; </div></div>
+<div class="site-posts radius7">
+<!-- Article -->
+	<div class="post-single radius7">
+    <header class="post-header-single">
+		 <h1 class="post-title yekan">
+			<a href="http://www.asreelm.com/dropdown-menu-validation/" rel="bookmark">ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP</a>
+		</h1> 
+        <div class="post-tools">
+        <div class="print-article desktop">
+        <a target="_blank" href="http://www.asreelm.com/dropdown-menu-validation/?print=9042" rel="nofollow">
+        <span class="icon-print post-tools-icon large"></span>پرینت</a></div>
+        <div class="related-articles"><a href="#related-contents"><span class="icon-loop post-tools-icon large"></span>مطالب مرتبط</a></div>
+                 </div>
+       
+        <div class="clear"></div>
+        <div class="post-meta-area">
+        <div class="meta-box">
+                <span class="icon-user meta-icon red"></span><span class="meta-text">عصرعلم<span class="about-author-link desktop">&nbsp;(<a href="#about-author">درباره نویسنده</a>)</span></span>
+        </div>
+        <div class="meta-box">
+        <span class="icon-clock meta-icon red"></span><span class="meta-text">۱ شهریور ۱۳۹۳</span>
+        </div>
+        <div class="meta-box">
+        <span class="icon-books meta-icon red"></span><span class="meta-text"><a href="http://www.asreelm.com/category/learning/web-design/html-tut/" rel="category tag">آموزش HTML</a> <a href="http://www.asreelm.com/category/learning/web-design/php-tut/" rel="category tag">آموزش PHP</a></span>
+        </div>
+                <div class="meta-box">
+        <span class="icon-bars meta-icon red"></span><span class="meta-text">711 بار مشاهده شده</span>
+        </div>
+                <div class="meta-box">
+        <span class="icon-bubble meta-icon red"></span><span class="meta-text"><a href="http://www.asreelm.com/dropdown-menu-validation/#comments" title="دیدگاه‌ها برای ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP">۱۲ دیدگاه</a></span>
+        </div>
+        </div>
+	</header><!-- .post-header -->
+    <div class="clear"></div>
+    <div class="entry roya">
+				<p>در حین ساخت فرمهای HTML، یکی از مواردی که ممکن است به آن نیاز داشته باشید، فیلدهای منویی بازشو یا Drop Down هستند. اینگونه فیلدها معمولا به این صورت میباشند که با کلیک بر روی آنها، لیستی از انتخابات موجود برای شما نمایش داده میشود و میتوانید یک گزینه را انتخاب کنید. در این مطلب قصد داریم نحوه ی ساخت یکی از این فرمها را در HTML و اعتبارسنجی آن را در PHP آموزش دهیم.</p>
+<p>پیش از شروع آموزش میتوانید به مطلب زیر مراجعه کنید تا اطلاعات جامعی در خصوص فرمهای HTML کسب کنید:</p>
+<p>» <a title="آموزش جامع ساخت فرم های HTML" href="http://www.asreelm.com/html-form-creation/">آموزش جامع ساخت فرمهای HTML</a></p>
+<p><strong>پیش نیازها:</strong></p>
+<ol>
+<li>داشتن اطلاعات کافی از HTML و کار با تگ form و عناصر آن</li>
+<li>داشتن اطلاعات مقدماتی از PHP</li>
+</ol>
+<h2>ساخت منوی کشویی (&lt;select&gt;) در HTML</h2>
+<p>برای ساخت هر فرم در html باید از تگ &lt;form&gt; استفاده کنیم و برای ایجاد منوی کشویی (بازشو) باید از تگهای select و option استفاده کنیم. در این آموزش یک فرم ساده ایجاد میکنیم که کاربر بین دو گزینه ی &#8220;مرد&#8221; و &#8220;زن&#8221; حق انتخاب دارد و گزینه ی پیشفرض نیز عبارت &#8220;انتخاب کنید&#8221; است.</p>
+<p><img class="aligncenter size-full wp-image-9043" src="http://www.asreelm.com/uploads/2014/08/dropdown-menu.png" alt="منوی کشویی بازشو در html" width="359" height="214" /></p>
+<div class="html-code"><br />
+&lt;form action="process.php" method="post" &gt;<br />
+&lt;select name="<span style="color: #ff0000;">Select_Name</span>"&gt;<br />
+&lt;option value=""&gt;انتخاب کنید&lt;/option&gt;<br />
+&lt;option value="M"&gt; مرد&lt;/option&gt;<br />
+&lt;option value="F"&gt; زن &lt;/option&gt;<br />
+&lt;/select&gt;<br />
+&lt;input type="submit" value="ارسال" /&gt;<br />
+&lt;/form&gt;<br />
+</div>
+<p>یک تکه کدکوتاه که البته نیازمند توضیح است.</p>
+<p>مانند هر فرم دیگری، برای اینکه اطلاعات فرم پردازش شود باید از مشخصه ی action استفاده کنیم و آدرس صفحه ی پردازنده را در آن وارد کنیم. پس action=process.php به این معنی است که اطلاعات فرم به صفحه ای با آدرس process.php ارسال میگردد تا در آنجا پردازش شود. با استفاده از method نیز تعیین میکنیم نحوه ی ارسال و دریافت اطلاعات به چه گونه باشد. بهتر است برای فرم ها از متد Post استفاده کنید مگر در موارد معدود!</p>
+<p>در مرحله ی بعدی با استفاده از تگ &lt;select&gt; یک فرم بازشو (کشویی) ایجاد کردیم. باید نام منحصر به فردی به این تگ داده شود. برای همین منظور با استفاده از مشخصه ی name یک نام خاص به فیلد select دادیم. (name=Select_Name). میتوانید از هر نام دیگری که دلخواه شما است استفاده کنید فقط دقت داشته باشید که این نام<strong> نباید تکراری باشد.</strong></p>
+<p>با استفاده از تگهای &lt;option&gt; موارد تشکیل دهنده ی منو را ایجاد کردیم و برای هر option یک مقدار یا Value درنظر گرفتیم. این مقادیر برای هرکدام از optionها باید جداگانه باشند و تکراری نباشند. برای مثال برای option مرد مقدار M و برابر option زن مقدار F را در نظر گرفتیم و برای option انتخاب کنید هیچ مقداری را در نظر نگرفتیم و در واقع آنرا برابر &#8220;&#8221; (تهی) قرار دادیم. بدین ترتیب میدانیم که کاربر کدام یک از آیتم های موجود در لیست را انتخاب کرده است.</p>
+<p>در انتها نیز یک دکمه برای ارسال اطلاعات فرم تعبیه میکنیم.</p>
+<p>اما نحوه ی دریافت اطلاعات فرم کشویی (بازشو) و پردازش اطلاعات آن در PHP به چه صورت است؟</p>
+<h2>دریافت و پردازش اطلاعات فیلد select در فرم html با استفاده از PHP</h2>
+<p>دریافت اطلاعات فیلد select در php نیز مانند هر فیلد دیگری است. اگر دقت کرده باشید برای فیلد select یک name انحصاری انتخاب کرده بودیم. در اینجا name=Select_Name می باشد. در php کافی است اطلاعاتی که در این نام ذخیره شده است را بازیابی کنیم:</p>
+<div class="php-code"><br />
+&lt;?php<br />
+$select = $_POST['<span style="color: #ff0000;">Select_Name</span>'];<br />
+?&gt;<br />
+</div>
+<p>در قطعه کد بالا به صورت ابتدایی اطلاعات فیلد select را دریافت کردیم و داخل متغیری با نام select$ ذخیره کردیم. حال برای اعتبار سنجی میتوانیم از متغیر select$ استفاده کنیم.</p>
+<p>اعتبارسنجی به شیوه های مختلفی میتواند انجام شود که برخی از آنها را نام میبریم:</p>
+<ol>
+<li>موردی از لیست انتخاب نشده باشد (گزینه ی &#8220;انتخاب کنید&#8221; انتخاب شده باشد)</li>
+<li>گزینه ی مرد انتخاب شده باشد</li>
+<li>گزینه ی زن انتخاب شده باشد</li>
+</ol>
+<p>اکنون که مقدار تکمیل شده توسط کاربر را از فیلد Select در اختیار داریم میتوانیم با استفاده از <a title="آموزش php – درس هفتم – دستور شرطی if و elseif" href="http://www.asreelm.com/php-if-elseif-statements/" target="_blank">دستورات شرطی</a> اعتبارسنجی را انجام دهیم:</p>
+<h3><span style="color: #993300;">اعتبارسنجی:</span> حتما باید یک مورد انتخاب شود</h3>
+<p>اگر فیلدی انتخاب نشده باشد، پس فرم بر روی گزینه ی &#8220;انتخاب کنید&#8221; قرار خواهد داشت و مقدار value برای این فیلد یک عبارت تهی ( &#8221; &#8220;) است.</p>
+<p>به عبارت ساده تر، اگر مقدار select$ برابر تهی باشد یعنی موردی انتخاب نشده است:</p>
+<div class="php-code"><br />
+if (empty($select)){<br />
+echo " گزینه ای انتخاب نشده است";<br />
+}<br />
+</div>
+<p>در صورتی که بجای دستور echo از دستور die استفاده کنیم، اجرای کدها متوقف شده و ادامه ی کدها نمایش داده نخواهند شد.</p>
+<p>اگر بخواهیم مقدایر موجود در لیست را اعتبارسنجی کنیم نیز به همین ترتیب عمل میکنیم. یعنی مقداری که به value یک option داده ایم را با مقدار متغیر select$ مقایسه میکنیم. برای مثال:</p>
+<div class="php-code"><br />
+if($select == "<span style="color: #993300;">M</span>"){<br />
+echo "&lt;h1&gt;گزینه ی مرد انتخاب شده است.&lt;/h1&gt;";<br />
+}<br />
+if($select == "<span style="color: #993300;">F</span>"){<br />
+echo "&lt;h1&gt;گزینه ی زن انتخاب شده است.&lt;/h1&gt;";<br />
+}<br />
+</div>
+<p>با استفاده از دستور شرطی if تعیین کردیم که اگر مقدار select$ برابر با M باشد کاربر گزینه ی مرد را انتخاب کرده است و اگر برابر با F باشد کاربر گزینه ی زن را انتخاب کرده است. (M در فیلد option به عنوان value برای گزینه ی مرد در نظر گرفته شده بود و F به عنوان value برای گزینه ی زن).</p>
+<p>به این ترتیب کد اعتبارسنجی ما به این صورت خواهد بود:</p>
+<div class="php-code"><br />
+&lt;?php<br />
+$select = $_POST['Select_Name'];<br />
+if(empty($select)){<br />
+echo "&lt;h1&gt;گزینه ای انتخاب نشده است.&lt;/h1&gt;";<br />
+}<br />
+if($select == "M"){<br />
+echo "&lt;h1&gt;گزینه ی مرد انتخاب شده است.&lt;/h1&gt;";<br />
+}<br />
+if($select == "F"){<br />
+echo "&lt;h1&gt;گزینه زن انتخاب شده است.&lt;/h1&gt;";<br />
+}<br />
+?&gt;<br />
+</div>
+<p>نمونه ای از نحوه ی عملکرد کد را میتوانید در مثال آنلاین زیر مشاهده کنید:</p>
+<p>&nbsp;</p>
+<p dir="ltr" style="text-align: center;"><a href="http://demo.asreelm.com/php/dropdown-menu-validation" class="asreelm-small-button "  > مشاهده نمونه ی آنلاین </a></p>
+<p>» <a title="کدهای عنوان شده در مطلب - اعتبارسنجی منوی کشویی بازشو" href="http://www.asreelm.com/uploads/2014/08/menu.zip" target="_blank">دریافت کدهای عنوان شده در مطلب</a></p>
+<p class="copyright"><span class="icon-warning red large middle">&nbsp;</span><span style="font-weight:bold;color:#900;">توجه : </span><br />&copy; هرگونه استفاده از این مطلب بدون ذکر نام نویسنده و عصرعلم به صورت لینک تخلف بوده و با متخلف بر اساس قانون برخورد خواهد شد. <a href="http://www.copyscape.com/online-copyright-protection/" target="_blank" rel="nofollow" >Protected By Copyscape</a></p>
+
+	</div><!-- .entry-summary -->
+<!-- link pages--> 
+
+
+<!-- End link pages-->
+<div class="clear"></div>
+<!-- Share Article -->
+<div class="share-article-area desktop">
+<span class="icon-share green middle">&nbsp;</span>
+<span class="dark-blue roya middle"><strong>این مطلب را با دوستان خود به اشتراک بگذارید:</strong></span>
+
+<div class="apps-item balatarin">
+<a href="http://balatarin.com/links/submit?phase=2&amp;http://www.asreelm.com/dropdown-menu-validation/" target="_blank" title="ارسال ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP به بالاترین"><span class="icon-plus large"></span><span class="apps-text">بالاترین</span></a>
+</div>
+
+<div class="apps-item cloob">
+<a href="http://www.cloob.com/share/link/add?url=http://www.asreelm.com/dropdown-menu-validation/" target="_blank" title="داغ کردن ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP در کلوب.کام"><span class="icon-flickr large"></span><span class="apps-text">کلوب</span></a>
+</div>
+
+<div class="apps-item twitter">
+<a href="https://twitter.com/home?status=http://www.asreelm.com/dropdown-menu-validation/" target="_blank" title="اشتراک گذاری ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP در توییتر"><span class="icon-twitter2 large"></span><span class="apps-text">توئیتر</span></a>
+</div>
+<div class="apps-item facebook">
+<a href="https://www.facebook.com/sharer.php?u=http://www.asreelm.com/dropdown-menu-validation/" target="_blank" title="اشتراک گذاری ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP در فیسبوک"><span class="icon-facebook2 large"></span><span class="apps-text">فیسبوک</span></a>
+</div>
+<div class="apps-item googleplus">
+<a href="https://plus.google.com/share?url=http://www.asreelm.com/dropdown-menu-validation/" target="_blank" title="اشتراک گذاری ایجاد منوی بازشو یا کشویی (DropDown) و اعتبارسنجی با PHP در گوگل پلاس" ><span class="icon-googleplus3 large"></span><span class="apps-text">گوگل +</span></a>
+</div>
+</div>
+<!-- End of Share Article -->
+<!-- Related Contents and Tags -->
+<div class="related-post-area" id="related-contents">
+<p class="related-post-title tgshadow dark-blue roya"><span class="icon-loop">&nbsp;</span><strong>چند مطلب پیشنهادی</strong></p>
+<div class="related-post-item"><a href="http://www.asreelm.com/html-lesson7/" rel="bookmark" title="مشاهده مطلب با عنوان آموزش HTML &#8211; درس هفتم – تصاویر" class="related-post-item-text roya"><div class="related-post-item-thumbnail">            
+<img src="http://www.asreelm.com/wp-content/themes/asreelm-2014/images/no-photo.jpg" height="128" width="128" class="thumb-image" alt="آموزش HTML &#8211; درس هفتم – تصاویر" title="آموزش HTML &#8211; درس هفتم – تصاویر" />            </div><div>آموزش HTML &#8211; درس هفتم – تصاویر</div></a></div>
+<div class="related-post-item"><a href="http://www.asreelm.com/uploadlimitformat/" rel="bookmark" title="مشاهده مطلب با عنوان محدود کردن آپلود به فرمت های خاص" class="related-post-item-text roya"><div class="related-post-item-thumbnail">            
+<img src="http://www.asreelm.com/wp-content/themes/asreelm-2014/images/no-photo.jpg" height="128" width="128" class="thumb-image" alt="محدود کردن آپلود به فرمت های خاص" title="محدود کردن آپلود به فرمت های خاص" />            </div><div>محدود کردن آپلود به فرمت های خاص</div></a></div>
+<div class="related-post-item"><a href="http://www.asreelm.com/html-lesson1/" rel="bookmark" title="مشاهده مطلب با عنوان درس اول &#8211;  آشنایی با HTML" class="related-post-item-text roya"><div class="related-post-item-thumbnail">            
+<img src="http://www.asreelm.com/wp-content/themes/asreelm-2014/images/no-photo.jpg" height="128" width="128" class="thumb-image" alt="درس اول &#8211;  آشنایی با HTML" title="درس اول &#8211;  آشنایی با HTML" />            </div><div>درس اول &#8211;  آشنایی با HTML</div></a></div>
+<div class="related-post-item"><a href="http://www.asreelm.com/php-powerful-form-captcha/" rel="bookmark" title="مشاهده مطلب با عنوان چگونه برای فرمها کد کپچا (Captcha) ساده طراحی کنیم؟" class="related-post-item-text roya"><div class="related-post-item-thumbnail">            
+<img src="http://www.asreelm.com/uploads/2013/02/hardcaptcha-128x128.png" height="128" width="128" class="thumb-image" alt="چگونه برای فرمها کد کپچا (Captcha) ساده طراحی کنیم؟" title="چگونه برای فرمها کد کپچا (Captcha) ساده طراحی کنیم؟" />            </div><div>چگونه برای فرمها کد کپچا (Captcha) ساده طراحی کنیم؟</div></a></div>
+<div class="clear"></div>
+<!-- Start TAGS -->
+<div class="post-tags">
+<span class="icon-tags red middle">&nbsp;</span><span class="red roya">مشاهده آرشیو مطالب با برچسب:</span>
+<a href="http://www.asreelm.com/about/html/" rel="tag">html</a>، <a href="http://www.asreelm.com/about/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d8%b3%d8%a7%d8%ae%d8%aa-%d9%81%d8%b1%d9%85/" rel="tag">آموزش ساخت فرم</a>، <a href="http://www.asreelm.com/about/%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%d8%b3%d9%86%d8%ac%db%8c-%d9%81%d8%b1%d9%85/" rel="tag">اعتبارسنجی فرم</a>، <a href="http://www.asreelm.com/about/%d8%af%d8%b3%d8%aa%d9%88%d8%b1%d8%a7%d8%aa-%d8%b4%d8%b1%d8%b7%db%8c/" rel="tag">دستورات شرطی</a>، <a href="http://www.asreelm.com/about/%d9%81%d8%b1%d9%85-php/" rel="tag">فرم php</a></div>
+<!-- End .post-tags -->
+</div>
+<!-- End of Related Contents and Tags -->
+<div class="clear"></div>
+<!-- About Author -->
+<div class="about-author-area desktop" id="about-author">
+<p class="about-author-title tgshadow dark-blue roya">
+<span class="icon-user">&nbsp;</span><strong>درباره نویسنده</strong>
+</p>
+<div class="post-author-avatar w"><img alt='عصرعلم' src='http://www.asreelm.com/uploads/2012/05/1_avatar-96x96.png' class='avatar avatar-96 photo' height='96' width='96' /></div>
+<div class="post-author-data w">
+<p class="author-name">
+<span class="author-name-holder"><strong>ارسال شده توسط: </strong>عصرعلم</span></p>
+<p class="author-bio">
+سایت علمی آموزشی عصرعلم از شهریورماه سال 1388 فعالیت خود را در زمینه ارائه مطالب علمی و آموزشی آغاز نموده است و همواره در تلاش است با ارائه مطالب جدید علمی و آموزشی محیطی برای تبادل اطلاعات برای فارسی زبانان بوجود آورد شما نیز در صورت تمایل میتوانید مارا در این امر یاری رسانید و مطالب خود را برای ما ارسال نمایید.</p>
+<p class="author-contact-info"><strong>ارتباط با نویسنده:</strong> 
+<a href="http://www.facebook.com/AsreElm" rel="nofollow" title="صفحه فیسبوک نویسنده"><span class="icon-facebook2">&nbsp;فیسبوک</span></a><a href="https://plus.google.com/u/0/109833131449748610430/posts" rel="nofollow" title="صفحه گوگل پلاس نویسنده"><span class="icon-googleplus2">&nbsp;گوگل پلاس</span></a><a href="http://www.AsreElm.com" rel="nofollow" title="سایت نویسنده"><span class="icon-globe">&nbsp;وبسایت</span></a></p>
+
+</div>
+<div class="clear"></div>
+<a class="send-article light-gray-bg dark-blue roya radius7" href="http://www.asreelm.com/write-for-us/" title="ارسال مطلب برای عصرعلم">نویسنده عصرعلم شوید!</a></div>
+<!-- End of About Author -->
+<div class="clear"></div>
+</div><!-- End .post -->
+</div>
+<!-- End Article -->
+
+<!-- Mahsulat Widget -->
+<!-- Mahsulat Widget -->
+
+<!-- COMMENTS -->
+<div class="clear"></div>
+<div class="comment-section">
+<aside>
+                                
+<!-- You can start editing here. -->
+<div class="comments" id="comments">
+	<p class="comment-title">
+	<span class="icon-bubble">&nbsp;</span>
+	<span class="comment-title-txt">
+	۱۲ دیدگاه نوشته شده است!    	    	( <a class="your-comment" href="#comment_rules" title="دیدگاه خود را بنویسید!" > نظر بدهید!</a> )
+    		</span></p>
+	<ul class="commentlist">
+	   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/ee9dc87e18ee6d30e41df3352182b27e?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn">محمد</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۲ شهریور ۱۳۹۳ در ۱۲:۵۴         </span>
+         </span>
+         </div>
+   <div class="comment even thread-even depth-1 white-bg" id="comment-10314">
+     <div id="div-comment-10314">
+      
+		<div class="comment-text roya">
+      <p>علی بود</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10314#respond' onclick='return addComment.moveForm("comment-10314", "10314", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/03a1b7805b0d275c47e014e09c3fd2ac?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn"><a href='http://www.ghandopand.ir/' rel='external nofollow' class='url'>فرهاد</a></span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۲ شهریور ۱۳۹۳ در ۲۲:۰۰         </span>
+         </span>
+         </div>
+   <div class="comment odd alt thread-odd thread-alt depth-1 white-bg" id="comment-10324">
+     <div id="div-comment-10324">
+      
+		<div class="comment-text roya">
+      <p>سلام<br />
+لطفا آموزش هایی هم در رابطه با MySql بگذارید.</p>
+<p>با تشکر از سایت زیباتون</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10324#respond' onclick='return addComment.moveForm("comment-10324", "10324", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/ef45ac21900f8c298bbc1ff973a79989?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn">amin</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۳ مهر ۱۳۹۳ در ۲۳:۵۴         </span>
+         </span>
+         </div>
+   <div class="comment even thread-even depth-1 white-bg" id="comment-10746">
+     <div id="div-comment-10746">
+      
+		<div class="comment-text roya">
+      <p>سلام خسته نباشید میخواستم سوال کنم چطور یه درگاه پرداخت برای وردپرس بسازیم</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10746#respond' onclick='return addComment.moveForm("comment-10746", "10746", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+<ul class="children">
+   <li class="comment-header roya">
+   		<div class="depth-2">
+       	 <img alt='عصرعلم' src='http://www.asreelm.com/uploads/2012/05/1_avatar-36x36.png' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn"><a href='http://www.AsreElm.com' rel='external nofollow' class='url'>عصرعلم</a></span><span class="comment-post-author-txt">نویسنده مطلب</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۴ مهر ۱۳۹۳ در ۱۴:۵۱         </span>
+         </span>
+         </div>
+   <div class="comment byuser comment-author-dr-meta bypostauthor odd alt depth-2 white-bg" id="comment-10772">
+     <div id="div-comment-10772">
+      
+		<div class="comment-text roya">
+      <p>سلام<br />
+درگاه پرداخت مستقیم نیاز به برنامه نویسی پیشرفته داره، میتونید از درگاه های واسط مثل پارس پال یا زرین پال استفاده کنید که دارای کدهای آماده هم هستند.</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10772#respond' onclick='return addComment.moveForm("comment-10772", "10772", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/ef45ac21900f8c298bbc1ff973a79989?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn">amin</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۴ مهر ۱۳۹۳ در ۰۰:۰۲         </span>
+         </span>
+         </div>
+   <div class="comment even thread-odd thread-alt depth-1 white-bg" id="comment-10748">
+     <div id="div-comment-10748">
+      
+		<div class="comment-text roya">
+      <p>سلام خسته نباشید من یه مدتی اینجا از  شما درباره طراحی وبلاگ سوال می کردم مرسی از راهنماییاتون می خواستم سوال کنم به نظرتون طراحی <a href="http://www.fazadownload.ir" rel="nofollow">http://www.fazadownload.ir</a> که انجام دادم خوبه یا نه ! سیستم مدیریتیش وردپرس می خواستم خواهش کنم به جز سیستم گرید ۱۶ به بازدید کننده ها  table و یا div ها رو آموزش بدید چون داخل اکسپلورر وردپرس به مشکل بر می خورند</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10748#respond' onclick='return addComment.moveForm("comment-10748", "10748", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+<ul class="children">
+   <li class="comment-header roya">
+   		<div class="depth-2">
+       	 <img alt='عصرعلم' src='http://www.asreelm.com/uploads/2012/05/1_avatar-36x36.png' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn"><a href='http://www.AsreElm.com' rel='external nofollow' class='url'>عصرعلم</a></span><span class="comment-post-author-txt">نویسنده مطلب</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۴ مهر ۱۳۹۳ در ۱۴:۳۹         </span>
+         </span>
+         </div>
+   <div class="comment byuser comment-author-dr-meta bypostauthor odd alt depth-2 white-bg" id="comment-10764">
+     <div id="div-comment-10764">
+      
+		<div class="comment-text roya">
+      <p>سلام<br />
+سیستم گرید بندی در واقع همون سیستم Div است. با این تفاوت که از یک فریم ورک (Frame Work) آماده استفاده کردیم. گزینه ی استفاده از Table سالها است که منسوخ شده است. اگر شما از سیستم Div به درستی استفاده کنید و استاندارد کدها را بنویسید در هیچ مرورگری به مشکل بر نمیخورید. اینکه داخل اکسپلورر سایت به درستی نمایش داده نمیشه دلیلش درست نبودن کدنویسی است و مشکل از وردپرس نیست.<br />
+راستی، ظاهر سایتی که لینکش رو قرار دادید زیباست.</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10764#respond' onclick='return addComment.moveForm("comment-10764", "10764", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/ef45ac21900f8c298bbc1ff973a79989?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn">امين</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۵ مهر ۱۳۹۳ در ۰۷:۴۲         </span>
+         </span>
+         </div>
+   <div class="comment even thread-even depth-1 white-bg" id="comment-10795">
+     <div id="div-comment-10795">
+      
+		<div class="comment-text roya">
+      <p>نمیشه طرز کار پاپ آپ درون صفحه رو با آجاکس یاد بدین بد جور احتیاج میشه !</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10795#respond' onclick='return addComment.moveForm("comment-10795", "10795", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+<ul class="children">
+   <li class="comment-header roya">
+   		<div class="depth-2">
+       	 <img alt='عصرعلم' src='http://www.asreelm.com/uploads/2012/05/1_avatar-36x36.png' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn"><a href='http://www.AsreElm.com' rel='external nofollow' class='url'>عصرعلم</a></span><span class="comment-post-author-txt">نویسنده مطلب</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۵ مهر ۱۳۹۳ در ۰۹:۴۸         </span>
+         </span>
+         </div>
+   <div class="comment byuser comment-author-dr-meta bypostauthor odd alt depth-2 white-bg" id="comment-10797">
+     <div id="div-comment-10797">
+      
+		<div class="comment-text roya">
+      <p>منظورتون را از پاپ آپ درون صفحه متوجه نمیشم! هم پاپ آپ باشه و هم داخل صفحه؟!</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10797#respond' onclick='return addComment.moveForm("comment-10797", "10797", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/ef45ac21900f8c298bbc1ff973a79989?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn">امين</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۵ مهر ۱۳۹۳ در ۲۱:۱۹         </span>
+         </span>
+         </div>
+   <div class="comment even thread-odd thread-alt depth-1 white-bg" id="comment-10816">
+     <div id="div-comment-10816">
+      
+		<div class="comment-text roya">
+      <p>پاپ آپ توضیحات وقتی داخل سایت کسی میرید باز میشه مثل خوش آمد گویی از همین ها که یک با کلیک بستن همراه باشه آجاکس و jqury کار شده توش</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10816#respond' onclick='return addComment.moveForm("comment-10816", "10816", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+<ul class="children">
+   <li class="comment-header roya">
+   		<div class="depth-2">
+       	 <img alt='عصرعلم' src='http://www.asreelm.com/uploads/2012/05/1_avatar-36x36.png' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn"><a href='http://www.AsreElm.com' rel='external nofollow' class='url'>عصرعلم</a></span><span class="comment-post-author-txt">نویسنده مطلب</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۵ مهر ۱۳۹۳ در ۲۲:۱۵         </span>
+         </span>
+         </div>
+   <div class="comment byuser comment-author-dr-meta bypostauthor odd alt depth-2 white-bg" id="comment-10817">
+     <div id="div-comment-10817">
+      
+		<div class="comment-text roya">
+      <p>ساخت پاپ آپ با html و css هم ممکنه، میشه با جاوااسکریپت هم درستش کرد ولی Ajax نیازی نداره!<br />
+با اینحال مدنظر قرار میدم تا آموزشش را براتون آماده کنم.</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10817#respond' onclick='return addComment.moveForm("comment-10817", "10817", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+   <li class="comment-header roya">
+   		<div class="depth-1">
+       	 <img alt='' src='http://0.gravatar.com/avatar/ef45ac21900f8c298bbc1ff973a79989?s=36&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D36&amp;r=G' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn">امين</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۶ مهر ۱۳۹۳ در ۱۳:۴۵         </span>
+         </span>
+         </div>
+   <div class="comment even thread-even depth-1 white-bg" id="comment-10828">
+     <div id="div-comment-10828">
+      
+		<div class="comment-text roya">
+      <p>سلام خسته نباشید با AJAX بهتره چون تو اکسپلورر به دلیل قدیمی بودن آپدیت ها CSS3 نشون نمیده به مشکل آدم بر می خوره , اگه زحمتی نیست ساخت فروشگاه و یا ساخت قسمت سفارشات در وردپرس هم آموزش بدهید</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10828#respond' onclick='return addComment.moveForm("comment-10828", "10828", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+<ul class="children">
+   <li class="comment-header roya">
+   		<div class="depth-2">
+       	 <img alt='عصرعلم' src='http://www.asreelm.com/uploads/2012/05/1_avatar-36x36.png' class='avatar avatar-36 photo' height='36' width='36' />         <span class="inline-block comment-metadata">
+		 <span class="fn"><a href='http://www.AsreElm.com' rel='external nofollow' class='url'>عصرعلم</a></span><span class="comment-post-author-txt">نویسنده مطلب</span>         <br><span class="small tahoma gray">
+         <span class="icon-clock inline-block red"></span> ۱۲ مهر ۱۳۹۳ در ۱۱:۳۶         </span>
+         </span>
+         </div>
+   <div class="comment byuser comment-author-dr-meta bypostauthor odd alt depth-2 white-bg" id="comment-10948">
+     <div id="div-comment-10948">
+      
+		<div class="comment-text roya">
+      <p>سلام<br />
+Ajax کلا ربطی به موضوع نداره، چیزی که شما میخواهید جاوااسکریپت یا jQuery است. سعی میکنم در فرصتی مناسب آموزش اینکار را برای شما تهیه کنم.</p>
+		</div>
+
+      <span class="reply-link white-bg radius7 roya">
+	  <a class='comment-reply-link' href='/dropdown-menu-validation/?replytocom=10948#respond' onclick='return addComment.moveForm("comment-10948", "10948", "respond", "9042")'>پاسخ دهید</a>      </span>
+</div>
+     </div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ul>
+
+
+
+<!-- #Respond -->
+<div id="respond">
+
+<!-- .Commentform -->
+<div class="commentform radius7 light-red-bg tablet">
+<!-- .Comment-rules -->
+<div class="comment-rules roya" id="comment_rules">
+<strong>قوانین ارسال دیدگاه</strong>
+<ol>
+<li>لطفا نظر خود را با فونت فارسی تایپ کنید!</li>
+<li>تمام دیدگاه ها پس از تایید مدیریت نمایش داده خواهند شد. نمایش دیدگاه شما ممکن است تا چند روز طول بکشد.</li>
+<li>لطفا از ارسال دیدگاه تکراری و یا نامرتبط با مطلب خودداری کنید. در صورت لزوم میتوانید از <a href="http://answer.asreelm.com" title="سامانه پرسش و پاسخ" style="text-decoration:none;">بخش پرسش و پاسخ</a> برای دریافت پاسخ خود استفاده کنید.</li>
+<li>برای مشاهده راهنمای ارسال کدهای اسکریپت <span class="code">(html,php,javascript,...)</span> <span class="encode-tool-link" onClick="window.open('http://www.asreelm.com/wp-content/themes/asreelm-2014/encode.php', 'popupwindow', 'scrollbars=yes,width=700,height=520');return true" title="ابزار تبدیل کد">اینجا کلیک کنید</span>.</li>
+</ol>
+</div>
+<!-- End .Comment-rules -->
+<form action="http://www.asreelm.com/wp-comments-post.php" method="post" id="commentform">
+<div class="comment-form-fields roya">
+<p>
+<label for="author" class="comment-label"><span class="icon-user gray999"></span> نام:</label>
+<input type="text" value="" name="author" id="author" class="author" /> اختیاری
+</p>
+<p>
+<label for="email" class="comment-label"><span class="icon-mail2 gray999"></span> ایمیل:</label>
+<input type="email" value="" name="email" id="email" class="email" placeholder="your-email@domain.com"/> اختیاری (منتشر نخواهد شد)
+</p>
+<p>
+<label for="url" class="comment-label"><span class="icon-globe gray999"></span> تارنما:</label>
+<input type="url" value="" name="url" id="url" class="blogurl" title="آدرس تارنمای خود را وارد نمایید" placeholder="http://" />
+اختیاری</p>
+<p>
+<label class="comment-label"><span class="icon-bubble gray999"></span> دیدگاه:</label>
+<textarea name="comment" cols="25" rows="7" class="comment-textarea" ></textarea>
+</p>
+<p style="direction:rtl">
+<input type="checkbox" name="subject1" value="No" id="subject1" />
+<input type="checkbox" name="subject2" id="subject2" value="Yes" />
+<input type="checkbox" name="subject3" id="subject3" value="No" />برای ثبت دیدگاه گزینه وسط را تیک بزنید!
+</p>
+<p><input name="submit" type="submit" id="submit" class="comment-submit" value="ثبت دیدگاه" /></p>
+<input type='hidden' name='comment_post_ID' value='9042' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</div>
+</form>
+</div>
+<!-- End .Commentform -->
+</div>
+<!-- End #Respond -->
+
+</div>
+<!-- End #Comments -->                            
+                            </aside>
+</div>
+<!-- End Comments -->
+</div>
+<!-- End Main -->
+
+<!-- Sidebar -->
+<div class="w sidebar">
+<!-- Comming Soon -->
+<!-- End Comming Soon -->
+<!-- Newsletter -->
+<div class="newsletter-area radius7 white-bg roya">
+<p class="submenu-title arial"><span class="icon-feed middle orange"></span> خبرنامه عصرعلم</p>
+<div class="line orange-bg"></div>
+<p>هم اکنون مشترک شوید و به جمع بیش از <span class="bold red"> 2000 کاربر عضو </span>بپیوندید و مطالب عصرعلم را در پست الکترونیک خود دریافت کنید.(در ابتدای ایمیل www نگذارید!)</p>
+<form class="sub-form" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onSubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=asreelm/eAez', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+<input type="email" name="email" placeholder="example@domain.com" class="newsletter-field radius7" />
+<input type="hidden" value="asreelm/eAez" name="uri"/>
+<input type="hidden" name="loc" value="en_US"/>
+<input type="submit" value="عضویت" class="newsletter-button radius7" /></form>
+<a href="http://www.asreelm.com/guide-to-unsubscribe/" class="newsletter-unsub radius7">راهنمای لغو عضویت</a>
+</div>
+<!-- End Newsletter -->
+<!-- Sidebar Ads -->
+<div class="sidebar-ads desktop">
+<!--<div class="small-ads"></div>-->
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-4', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-4"><div class="small-ads"><a class="gofollow" data-track="NCwwLDAsMQ==" href="http://ponisha.ir/affiliate/metapars" rel="nofollow" target="_blank"><img src="http://www.asreelm.com/uploads/2014/10/ponisha-125x125-3.gif" height="125" width="125" alt="پونیشا، کسب درآمد از مهارتها" /></a></div></div></div>
+<div class="clear"></div>
+<!-- Sidebar Text Ads -->
+<div class="sidebar-text-ads desktop">
+</div>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-5', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-5"><div class="sidebar-text-ads asreelm-orange-bg desktop">
+<a class="gofollow" data-track="NSwwLDAsMQ==" target="_blank" href="http://www.zanbil.ir/">سایت فروشگاه اینترنتی</a>
+<p>بهترین سایت فروشگاه خرید اینترنتی</p>
+</div></div>		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-9', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-9"><div class="sidebar-text-ads asreelm-red-bg desktop">
+<a class="gofollow" data-track="OSwwLDAsMQ==" target="_blank" href="http://www.iranflora.ir/"> ارسال گل در تهران</a>
+<p>سفارش و ارسال گل، سبد گل ترحیم، دسته گل، سبد گل، تاج گل، خرید و ارسال اینترنتی هدیه و گل در ایرانفلورا.</p>
+</div></div>		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-2', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-2"><div class="sidebar-text-ads asreelm-pink-bg desktop">
+<a class="gofollow" data-track="MiwwLDAsMQ==" target="_blank" href="http://baelm.ir/category/%D9%BE%D8%B2%D8%B4%D9%83%D9%8A/%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%AF%D8%A7%D8%B1%D9%88/">موارد مصرف دارو</a>
+<p>موارد مصرف و عوارض انواع مختلف داروها</p>
+</div></div>		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-6', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-6"><div class="sidebar-text-ads asreelm-green-bg desktop">
+<a class="gofollow" data-track="NiwwLDAsMQ==" target="_blank" href="http://www.zanbil.ir/browse/tablet">قیمت تبلت سامسونگ</a>
+<p>قیمت تبلت سامسونگ و ایسوس و اپل</p>
+</div></div>		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery.cookie(
+					'adrotate-track-3', 
+					'a:2:{i:0;i:0;i:1;i:0;}', 
+					{expires: 1, path: '/', domain: ''}
+				);
+			});
+		</script>
+		<div class="a-single a-3"><div class="sidebar-text-ads asreelm-ice-blue-bg desktop">
+<a class="gofollow" data-track="MywwLDAsMQ==" target="_blank" href="http://www.asreelm.com/advertise/"> محل تبلیغ شما</a>
+<p>نمایش تبلیغات متنی شما با قیمت مناسب. برای مشاهده تعرفه تبلیغات کلیک کنید.</p>
+</div></div><!-- End Sidebar Text Ads -->
+<div class="clear"></div>
+<!-- End Sidebar Ads -->
+<!-- We Support -->
+<div class="we-like radius7 white-bg roya desktop">
+<p class="submenu-title arial middle"><span class="icon-thumbs-up middle green"></span> می پسندیم</p>
+<div class="line"></div>
+<ul>
+<li>
+<a href="http://mahak-charity.org/main/fa" rel="nofollow" title="سازمان خیریه حمایت از کودکان مبتلا به سرطان" target="_blank">محک</a>
+<span class="note">سازمان خیریه حمایت از کودکان مبتلا به سرطان</span>
+</li>
+<li>
+<a href="http://ehda.ir/" rel="nofollow" title="اهدای عضو، اهدای زندگی" target="_blank">اهدای عضو</a>
+<span class="note">اهدای عضو، اهدای زندگی</span>
+</li>
+<li>
+<a href="http://ganjoor.net/" rel="nofollow" title="آثار سخنسرایان پارسی‌گو" target="_blank">گنجور</a>
+<span class="note">آثار سخنسرایان پارسی‌گو</span>
+</li>
+</ul>
+</div>
+<!-- End We Support -->
+<div class="sidebar-widget-area desktop">
+</div>
+</div>
+
+                            <!-- End Sidebar-->
+</div>
+<!-- End Main Area -->
+<div class="clear"></div>
+<!-- Footer -->
+                                <a href="#top" class="back-to-top">بالا</a>
+<div class="footer-line"></div>
+<div class="footer">
+<div class="container">
+<!-- Col 1 -->
+<div class="footer-row">
+<div class="w widget-area tablet">
+<div class="widget-header"><span class="icon-heart orange medium middle">&nbsp;</span>پربازدیدترین مطالب</div><div class="widget-line"></div><div class="widget-body"><ul>
+<li>
+<a href="http://www.asreelm.com/breast-growth/"  title="بزرگ کردن سایز سینه بدون عمل جراحی">بزرگ کردن سایز سینه بدون عمل جراحی</a>
+</li><li>
+<a href="http://www.asreelm.com/increase-height/"  title="تمرینات افزایش قد به صورت طبیعی">تمرینات افزایش قد به صورت طبیعی</a>
+</li><li>
+<a href="http://www.asreelm.com/ovariancycsts/"  title="کیست تخمدان و درمان آن">کیست تخمدان و درمان آن</a>
+</li><li>
+<a href="http://www.asreelm.com/make-the-face-fuller/"  title="ورزش صورت برای تپل شدن و پر نشان داده شدن صورت">ورزش صورت برای تپل شدن و پر نشان داده شدن صورت</a>
+</li><li>
+<a href="http://www.asreelm.com/14-signs-of-wrong-bra-size/"  title="راهنمای انتخاب بهترین و مناسب ترین سینه بند برای بانوان">راهنمای انتخاب بهترین و مناسب ترین سینه بند برای بانوان</a>
+</li></ul>
+</div></div>
+<!-- End Col 1 -->
+<!-- Col 2 -->
+<div class="w widget-area tablet">
+				<div class="widget-header"><span class="icon-star yellow medium middle">&nbsp;</span>جدیدترین مطالب</div><div class="widget-line"></div><div class="widget-body">		<ul>
+					<li>
+				<a href="http://www.asreelm.com/5-things-successful-people-do/">۵ کاری که برای موفقیت باید قبل از ۸ صبح انجام دهید</a>
+						</li>
+					<li>
+				<a href="http://www.asreelm.com/shrink-extend-volumes-partitions-windows-7/">آموزش پارتیشن بندی و ایجاد درایو جدید در ویندوز ۷</a>
+						</li>
+					<li>
+				<a href="http://www.asreelm.com/create-table-of-contents-manually-in-word/">درج فهرست عناوین به صورت دستی در پرونده ورد</a>
+						</li>
+					<li>
+				<a href="http://www.asreelm.com/tips-to-whiten-teeth/">چطور میتوانیم دندانهایی سفید و زیبا داشته باشیم؟</a>
+						</li>
+					<li>
+				<a href="http://www.asreelm.com/foods-enhance-your-libido/">۵ ماده غذایی افزایش دهنده میل جنسی</a>
+						</li>
+				</ul>
+		</div></div>
+<!-- End Col 2 -->
+<!-- Col 3 -->
+<div class="w widget-area desktop">
+<div class="widget-header"><a class='rsswidget' href='http://answer.asreelm.com/feed/questions.rss'><img style='border:0' width='14' height='14' src='http://www.asreelm.com/wp-includes/images/rss.png' alt='RSS' /></a> <a class='rsswidget' href='http://answer.asreelm.com/questions'>جدیدترین پرسشها</a></div><div class="widget-line"></div><div class="widget-body"><ul><li><a class='rsswidget' href='http://answer.asreelm.com/492/%D8%A7%D9%8A%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D8%AF%D8%B1-%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE'>اينترنت در لپ تاپ</a></li><li><a class='rsswidget' href='http://answer.asreelm.com/491/%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%A7%D9%86%D8%B1%DA%98%D9%8A-%DA%86%D8%A7%DA%A9%D8%B1%D8%A7-%D9%87%D8%A7%D9%8A-%D8%A8%D8%AF%D9%86-%D8%A8%D8%A7-%D8%AC%D9%88%D8%A7%D8%A8'>کنترل انرژي چاکرا هاي بدن-با جواب</a></li><li><a class='rsswidget' href='http://answer.asreelm.com/489/%D8%A8%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D9%85%D9%86-%DA%86%D9%86%D8%AF-%D8%B1%D9%88%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA-%DA%A9%D9%87-%D8%A7%D8%B2-%D9%86%D8%A7%D9%81%D9%85-%D8%AE%D9%88%D9%86-%D9%85%DB%8C-%D8%A2%DB%8C%D8%AF-%D8%AF%D9%84%DB%8C%D9%84-%D8%A2%D9%86-%DA%86%DB%8C%D8%B3%D8%AA%D8%9F'>باسلام.من چند روزی است که از نافم خون می آید دلیل آن چیست؟</a></li><li><a class='rsswidget' href='http://answer.asreelm.com/480/%D9%81%D9%88%D8%AA-%D9%86%D9%88%D8%AA-%D8%AF%D8%B1-%D9%88%D8%B1%D8%AF'>فوت نوت در ورد</a></li><li><a class='rsswidget' href='http://answer.asreelm.com/479/%D8%AF%D8%B1%D9%85%D9%88%D8%B1%D8%AF-%DA%A9%DB%8C%D8%B3%D8%AA-%D8%A2%D9%86%D8%AF%D9%88%D9%85%D8%AA%D8%B1%D9%88%DB%8C%D8%B2'>درمورد کیست آندومترویز</a></li></ul></div></div>
+<!-- End Col 3 -->
+<!-- Col 4 -->
+<div class="w widget-area desktop">
+<div class="widget-header">امکانات و زیرمجموعه ها</div>
+<div class="widget-line"></div>
+<div class="widget-footer">
+<a href="http://www.answer.asreelm.com/" class="middle">
+<span class="icon-question parts-icon question green radius7 middle"></span> سامانه پرسش و پاسخ
+</a>
+<!--<a href="http://www.design.asreelm.com/" class="middle">
+<span class="icon-image parts-icon design violet radius7 middle"></span>گالری پوسته های وردپرس
+</a>-->
+<a href="http://www.asreelm.com/ecards/" class="middle">
+<span class="icon-newspaper parts-icon cart-postal blue radius7 middle"></span> ارسال رایگان کارت تبریک
+</a>
+<a href="http://www.asreelm.com/products/" class="middle">
+<span class="icon-gift parts-icon shop pink radius7 middle"></span> بازارچه محصولات عصرعلم
+</a>
+<a href="http://store.asreelm.com/" class="middle">
+<span class="icon-cart parts-icon earn gray radius7 middle"></span> فروشگاه اینترنتی
+</a>
+<a href="http://www.asreelm.com/support-us/" class="middle">
+<span class="icon-heart parts-icon donate red radius7 middle"></span> در عصرعلم سهیم باشید!
+</a>
+</div>
+</div>
+<!-- End Col 4 -->
+</div><!-- End .footer-row -->
+<div class="clear"></div>
+<!-- Col -->
+<div class="w footer-links roya">
+<a href="http://www.asreelm.com/" title="عصرعلم"><span class="icon-home"></span> صفحه نخست</a> 
+<a href="http://www.asreelm.com/advertise/" title="تبلیغات در عصرعلم"><span class="icon-bullhorn"></span> تبلیغات</a>
+<a href="http://www.asreelm.com/write-for-us/" title="ارسال مطلب برای عصرعلم"><span class="icon-newspaper"></span> ارسال مطلب</a>
+<!--<a href="#" title="عصرعلم"><span class="icon-mobile"></span> اپلیکیشن عصرعلم</a>
+<a href="#" title="عصرعلم"><span class="icon-link"></span> لینکهای مفید</a>-->
+<a href="http://www.asreelm.com/about-us/" title="درباره عصرعلم"><span class="icon-profile"></span> درباره ما</a>
+<a href="http://www.asreelm.com/contact-us/" title="تماس با مدیریت سایت"><span class="icon-envelope"></span> تماس با ما</a>
+</div>
+<!-- End Col -->
+<div class="clear"></div>
+</div>
+<!-- END .container -->
+</div>
+<div class="clear"></div>
+<div class="under-footer roya">
+&copy; ۱۳۹۳-1388 بازنشر مطالب تنها با ذکر نام عصرعلم.کام به صورت لینک مجاز میباشد.
+<!-- Col -->
+<div class="apps-item twitter">
+        <a href="https://twitter.com/asreelm" title="پیگیری عصرعلم در توییتر"><span class="icon-twitter large"></span><span class="apps-text">توئیتر</span></a>
+</div>
+<div class="apps-item googleplus">
+        <a href="https://plus.google.com/+Asreelm/" title="به جمع ما در گوگل پلاس بپیوندید!"><span class="icon-googleplus large"></span><span class="apps-text">گوگل +</span></a>
+</div>
+<div class="apps-item facebook">
+            <a href="https://www.facebook.com/AsreElm" title="در فیسبوک هوادار عصرعلم شوید!"><span class="icon-facebook large"></span><span class="apps-text">فیسبوک</span></a>
+</div>
+<div class="apps-item aparat">
+            <a href="http://www.aparat.com/AsreElm" title="کانال عصرعلم در آپارات"><span class="icon-youtube2 large"></span><span class="apps-text">آپارات</span></a>
+</div>
+<!-- End Col -->
+<script type='text/javascript' src='http://www.asreelm.com/wp-content/plugins/adrotate/library/jquery.adrotate.dyngroup.js?ver=0.6'></script>
+<script type='text/javascript' src='http://www.asreelm.com/wp-content/plugins/adrotate/library/jquery.adrotate.clicktracker.js?ver=0.6'></script>
+<script type='text/javascript' src='http://www.asreelm.com/wp-content/plugins/adrotate/library/jquery.cookie.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"http:\/\/www.asreelm.com\/wp-admin\/admin-ajax.php","post_id":"9042"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.asreelm.com/wp-content/plugins/wp-postviews/postviews-cache.js?ver=1.68'></script>
+<!-- AdRotate JS -->
+<script type="text/javascript">
+var tracker_url = 'http://www.asreelm.com/wp-content/plugins/adrotate/library/clicktracker.php';
+var impression_url = 'http://www.asreelm.com/wp-content/plugins/adrotate/library/impressiontracker.php';
+</script>
+<!-- /AdRotate JS -->
+
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" src="http://www.webgozar.ir/c.aspx?Code=1420121&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=1420121" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+<div class="clear"></div>
+<div class="aligncenter">
+<script type="text/javascript" src="https://www.zarinpal.com/webservice/TrustCode"></script><noscript><a href="https://www.zarinpal.com/users/receptive_websites">وبسایت پذیرنده زرین پال</a></noscript>
+</div>
+<div class="clear"></div>
+</div><!-- .Footer -->
+                            <!-- End Footer -->
+</div><!-- End ID=Page -->
+</body>
+</html>
+
+                            
+                            
+<!-- Served from: www.asreelm.com @ ۱۳۹۳-۰۹-۱۷ ۰۱:۵۸:۰۳ by W3 Total Cache -->

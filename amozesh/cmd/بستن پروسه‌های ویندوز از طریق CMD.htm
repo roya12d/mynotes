@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="imagetoolbar" content="no">
+        <!-- base href="http://www.shegeftangiz.com/archive/725/%D8%A8%D8%B3%D8%AA%D9%86-%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-cmd/" -->
+        <meta name="keywords" content="بستن,پروسه‌های,بستن پروسه‌های ویندوز از طریق CMD,ویندوز,از,طریق,CMD,نرم افزار موبایل , نرم افزار کامپیوتر , اخبار آی تی , اخبار تکنولوژی , جدیدترین گجت ها,دانلود">
+        <meta name="description" content="همان  طور که می دانید برای بستن پروسه های ویندوز بایستی به Task Manager و سپس تب Processes مراجعه نمایید. اما شاید برای تان جالب باشد که بدانید این کار را می توانید از طریق Command Prompt ویندوز نیز ا …">
+	<title>بستن پروسه‌های ویندوز از طریق CMD</title>
+	<link rel="stylesheet" href="%D8%A8%D8%B3%D8%AA%D9%86%20%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20CMD_files/default.css" type="text/css">
+	<link rel="alternate" type="application/rss+xml" title="شگفت انگیز | جدیدترین آموزش ها , اخبار آی تی و تکنولوژی" href="http://www.shegeftangiz.com/rss/">
+	<link rel="sitemap" href="http://www.shegeftangiz.com/sitemaps/sitemap.xml">
+	<link rel="index" title="شگفت انگیز | جدیدترین آموزش ها , اخبار آی تی و تکنولوژی" href="http://www.shegeftangiz.com/">
+</head>
+<body>
+<a href="http://www.pasargadmetal.ir/" style="position:absolute; top: 0; left: 0; font-size: 1px; color: transparent;">لوله آتشخوار</a>
+<div class="header"><div class="header-inner"></div></div>
+<div class="top_menu_container cls">
+	<div class="search-box">
+		<form action="/search/" method="post">
+			<input name="word" placeholder="جستجو در سایت" type="text">
+			<button type="submit"> </button>
+		</form>
+	</div>
+	<ul class="top_menu">
+		<li><a href="http://www.shegeftangiz.com/">صفحه اصلی</a></li>
+		<li><a href="http://www.shegeftangiz.com/archive/1771/%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA/">تبلیغات در سایت</a></li>
+		<li><a href="http://www.shegeftangiz.com/join/">عضویت در سایت</a></li>
+		<li><a href="http://www.shegeftangiz.com/contact/">تماس با ما</a></li>
+	</ul>
+</div>
+<div id="wrapper" class="cls"><div class="main-inner">
+	<div class="cls">
+		<div id="right-menu">
+			<div class="box-top">بخش های سایت</div>
+			<div class="box-bottom" style="padding: 0">
+			<ul class="cat">
+				<li class="cat"><a href="http://www.shegeftangiz.com/1/shopping-guide/" title="راهنمای خرید" rel="category tag">راهنمای خرید</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/14/%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1-%D8%AC%D8%A7%D9%86%D8%A8%DB%8C/" title="ابزار جانبی" rel="tag">ابزار جانبی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/1/%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE/" title="لپ تاپ" rel="tag">لپ تاپ</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/2/%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1/" title="کامپیوتر" rel="tag">کامپیوتر</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/3/%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84/" title="موبایل" rel="tag">موبایل</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/4/%DA%A9%D8%A7%D8%B1%D8%AA-%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9/" title="کارت گرافیک" rel="tag">کارت گرافیک</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/5/%D9%BE%D8%B1%DB%8C%D9%86%D8%AA%D8%B1/" title="پرینتر" rel="tag">پرینتر</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/6/%D9%86%D9%88%D8%AA-%D8%A8%D9%88%DA%A9/" title="نوت بوک" rel="tag">نوت بوک</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/7/%D8%AA%D9%84%D9%88%DB%8C%D8%B2%DB%8C%D9%88%D9%86/" title="تلویزیون" rel="tag">تلویزیون</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/8/%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86/" title="دوربین" rel="tag">دوربین</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/9/%D8%AA%D8%A8%D9%84%D8%AA/" title="تبلت" rel="tag">تبلت</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/10/cpu/" title="cpu" rel="tag">cpu</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/11/%D9%85%D8%A7%D8%AF%D8%B1%D8%A8%D8%B1%D8%AF/" title="مادربرد" rel="tag">مادربرد</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/12/%D9%87%D8%A7%D8%B1%D8%AF-%D8%A7%DA%A9%D8%B3%D8%AA%D8%B1%D9%86%D8%A7%D9%84/" title="هارد اکسترنال" rel="tag">هارد اکسترنال</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/1/shopping-guide/13/fablet/" title="فبلت" rel="tag">فبلت</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/2/computers-and-technology-news/" title="اخبار کامپیوتر و تکنولوژی" rel="category tag">اخبار کامپیوتر و تکنولوژی</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/2/computers-and-technology-news/1/%D8%AA%DA%A9%D9%86%D9%88%D9%84%D9%88%DA%98%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A8%D8%B1%D8%AA%D8%B1/" title="تکنولوژی های برتر" rel="tag">تکنولوژی های برتر</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/2/computers-and-technology-news/2/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-it/" title="اخبار IT" rel="tag">اخبار IT</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/2/computers-and-technology-news/3/%D8%A7%D9%85%D9%86%DB%8C%D8%AA/" title="امنیت" rel="tag">امنیت</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/" title="بازارچه دیجیتال" rel="category tag">بازارچه دیجیتال</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/1/%D9%82%DB%8C%D9%85%D8%AA-%D8%B1%D9%88%D8%B2-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE/" title="قیمت روز انواع لپ تاپ" rel="tag">قیمت روز انواع لپ تاپ</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/2/%D9%82%DB%8C%D9%85%D8%AA-%D8%B1%D9%88%D8%B2-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%AA%D8%A8%D9%84%D8%AA-%D9%87%D8%A7/" title="قیمت روز انواع تبلت ها" rel="tag">قیمت روز انواع تبلت ها</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/3/%D9%82%DB%8C%D9%85%D8%AA-%D8%B1%D9%88%D8%B2-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84/" title="قیمت روز انواع موبایل" rel="tag">قیمت روز انواع موبایل</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/4/%D9%82%DB%8C%D9%85%D8%AA-%D8%B1%D9%88%D8%B2-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%AA%D9%84%D9%88%DB%8C%D8%B2%DB%8C%D9%88%D9%86/" title="قیمت روز انواع تلویزیون" rel="tag">قیمت روز انواع تلویزیون</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/5/%D9%82%DB%8C%D9%85%D8%AA-%D8%B1%D9%88%D8%B2-%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86/" title="قیمت روز انواع دوربین" rel="tag">قیمت روز انواع دوربین</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/6/flash/" title="قیمت روز انواع فلش مموری" rel="tag">قیمت روز انواع فلش مموری</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/3/digital-marketplace/7/%D9%82%DB%8C%D9%85%D8%AA-%D9%84%D9%88%D8%A7%D8%B2%D9%85-%D8%AC%D8%A7%D9%86%D8%A8%DB%8C/" title="قیمت لوازم جانبی" rel="tag">قیمت لوازم جانبی</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/4/introduce-new-software/" title="معرفی جدیدترین نرم افزارها" rel="category tag">معرفی جدیدترین نرم افزارها</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/4/introduce-new-software/1/%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84/" title="نرم افزار موبایل" rel="tag">نرم افزار موبایل</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/4/introduce-new-software/2/%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C/" title="ابزارهای اینترنتی" rel="tag">ابزارهای اینترنتی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/4/introduce-new-software/3/%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1/" title="نرم افزار کامپیوتر" rel="tag">نرم افزار کامپیوتر</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/4/introduce-new-software/4/anti-virus/" title="آنتی ویروس ها" rel="tag">آنتی ویروس ها</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/5/latest-games-news/" title="جدیدترین اخبار بازی ها" rel="category tag">جدیدترین اخبار بازی ها</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/5/latest-games-news/1/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%B1%D8%A7%DB%8C%D8%A7%D9%86%D9%87-%D8%A7%DB%8C/" title="بازی های رایانه ای" rel="tag">بازی های رایانه ای</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/5/latest-games-news/2/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84/" title="بازی موبایل" rel="tag">بازی موبایل</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/5/latest-games-news/3/play-station/" title="بازی های پلی استیشن" rel="tag">بازی های پلی استیشن</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/5/latest-games-news/4/%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86/" title="بازی آنلاین" rel="tag">بازی آنلاین</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/6/learning/" title="آموزش" rel="category tag">آموزش</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/1/%D8%B3%DB%8C%D8%B3%D8%AA%D9%85-%D8%B9%D8%A7%D9%85%D9%84/" title="سیستم عامل" rel="tag">سیستم عامل</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/2/%D8%AA%D9%84%D9%81%D9%86-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF%D8%AA%D8%A8%D9%84%D8%AA/" title="تلفن هوشمند/تبلت" rel="tag">تلفن هوشمند/تبلت</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/3/%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D9%88-%D9%88%D8%A8/" title="اینترنت و وب" rel="tag">اینترنت و وب</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/5/%D8%B9%D9%85%D9%88%D9%85%DB%8C/" title="عمومی" rel="tag">عمومی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/6/%D8%A7%D9%85%D9%86%DB%8C%D8%AA/" title="امنیت" rel="tag">امنیت</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/7/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%87%D8%A7%DB%8C-%D9%81%DB%8C%D8%B3%D8%A8%D9%88%DA%A9%DB%8C/" title="آموزش های فیسبوکی" rel="tag">آموزش های فیسبوکی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/8/photography/" title="عکاسی" rel="tag">عکاسی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/9/office/" title="آفیس" rel="tag">آفیس</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/10/photoshop/" title="فتوشاپ" rel="tag">فتوشاپ</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/11/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C/" title="برنامه نویسی" rel="tag">برنامه نویسی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/12/%D8%B4%D8%A8%DA%A9%D9%87/" title="شبکه" rel="tag">شبکه</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/13/%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85/" title="اینستاگرام" rel="tag">اینستاگرام</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/6/learning/14/%D8%B4%D8%A8%DA%A9%D9%87-%D9%87%D8%A7%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C/" title="شبکه های اجتماعی" rel="tag">شبکه های اجتماعی</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/7/other/" title="متفرقه" rel="category tag">متفرقه</a>
+					<ul class="subcat">
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/8/mobile/" title="موبایل" rel="category tag">موبایل</a>
+					<ul class="subcat">
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/9/learning-english/" title="آموزش زبان انگلیسی" rel="category tag">آموزش زبان انگلیسی</a>
+					<ul class="subcat">
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/10/tarfandhaye-computeri-interneti/" title="ترفندهای کامپیوتری و اینترنتی" rel="category tag">ترفندهای کامپیوتری و اینترنتی</a>
+					<ul class="subcat">
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/11/tarfand/" title="ترفندهای موبایل" rel="category tag">ترفندهای موبایل</a>
+					<ul class="subcat">
+						<li class="subcat"><a href="http://www.shegeftangiz.com/11/tarfand/1/android/" title="ترفندهای اندرویدی" rel="tag">ترفندهای اندرویدی</a></li>
+						<li class="subcat"><a href="http://www.shegeftangiz.com/11/tarfand/2/%D8%AA%D8%B1%D9%81%D9%86%D8%AF%D9%87%D8%A7%DB%8C-ios/" title="ترفندهای ios" rel="tag">ترفندهای ios</a></li>
+					</ul>
+				</li>
+				<li class="cat"><a href="http://www.shegeftangiz.com/12/answer-to-your-questions/" title="پاسخ به سوالات متداول شما" rel="category tag">پاسخ به سوالات متداول شما</a>
+					<ul class="subcat">
+					</ul>
+				</li>
+			</ul>
+			</div>
+			<div class="box-top">دوستان</div>
+			<div class="box-bottom">
+			<ul class="list">
+				<li><a href="http://irangrand.ir/" title="ایران گراند" rel="nofollow" target="_blank">ایران گراند</a></li>
+			</ul>
+			</div>
+		</div>
+		<div id="left-menu" class="cls">
+			<div class="cls">
+				<div id="mr">
+					<div class="box-container" style="height: 405px; overflow: hidden;">
+						<div class="box-top">جدیدترین مطالب سایت</div>
+						<ul class="list2">
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6353/%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87%D8%A7%D8%AA-%D8%B1%D8%A7%DB%8C%D8%AC-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%81%D8%B6%D8%A7%DB%8C-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C/" title="اشتباهات رایج کاربران در فضای مجازی">اشتباهات رایج کاربران در فضای مجازی</a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6352/%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C-%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%DA%AF%D9%88%D8%B4%DB%8C-%D9%87%D8%A7-%D8%B1%D8%A7-%D9%85%D8%AA%D8%AD%D9%88%D9%84-%D9%85%DB%8C-%DA%A9%D9%86%D9%86%D8%AF/" title="فناوری هایی که گوشی ها را متحول می کنند ">فناوری هایی که گوشی ها را متحول می کنند </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6351/%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D8%A2%D8%AF%D8%B1%D8%B3-%D8%A7%D8%B2-%D8%AF%D8%B3%DA%A9%D8%AA%D8%A7%D9%BE-%D9%86%D9%82%D8%B4%D9%87-%DA%AF%D9%88%DA%AF%D9%84-%D8%A8%D9%87-%DA%AF%D9%88%D8%B4%DB%8C/" title="انتقال آدرس از دسکتاپ نقشه گوگل به گوشی ">انتقال آدرس از دسکتاپ نقشه گوگل به گوشی </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6350/%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%DA%A9%D9%84-%DA%AF%D8%B1%D9%81%D8%AA%D8%9F/" title="اینترنت چگونه شکل گرفت؟">اینترنت چگونه شکل گرفت؟</a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6349/%D9%85%D8%B3%D8%A6%D9%88%D9%84%DB%8C%D8%AA-%D9%86%D8%B5%D8%A8-%D8%A7%D9%BE%D9%84%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%D9%87%D8%A7%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A8%D8%A7-%D8%B4%D9%85%D8%A7/" title="مسئولیت نصب اپلیکیشن های موبایل با شماست! ">مسئولیت نصب اپلیکیشن های موبایل با شماست! </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6356/%DA%86%DA%AF%D9%88%D9%86%D9%87-pin-code-%D9%81%D8%B1%D8%A7%D9%85%D9%88%D8%B4-%D8%B4%D8%AF%D9%87-%DA%AF%D9%88%D8%B4%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%A7%D8%B2-%DA%A9%D9%86%DB%8C%D9%85%D8%9F/" title="چگونه PIN code فراموش شده گوشی را باز کنیم؟ ">چگونه PIN code فراموش شده گوشی را باز کنیم؟ </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6357/%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%AF%D8%B3%D8%AA-%D8%AF%D9%88%D9%85-%D8%B1%D8%A7-%D8%A8%D8%A7-%DA%86%D9%87-%D9%82%DB%8C%D9%85%D8%AA%DB%8C-%D8%A8/" title="بهترین خودروهای دست دوم را با چه قیمتی بخرید؟">بهترین خودروهای دست دوم را با چه قیمتی بخرید؟</a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6359/6-%D8%B4%D8%BA%D9%84%DB%8C-%DA%A9%D9%87-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1%D9%87%D8%A7-%D9%82%D8%A7%D8%AF%D8%B1-%D8%A8%D9%87-%D8%A7%D9%86%D8%AC%D8%A7%D9%85-%D8%A2%D9%86-%D9%86%DB%8C/" title="6 شغلی که کامپیوترها قادر به انجام آن نیستند">6 شغلی که کامپیوترها قادر به انجام آن نیستند</a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6354/%D8%AA%D8%A7%DA%A9%D9%86%D9%88%D9%86-%DA%86%D9%86%D8%AF-%D8%A8%D8%A7%D8%B1-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D8%A8%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%B1%D8%B3%DB%8C%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA/" title="تاکنون چند بار زندگی به پایان رسیده است؟ ">تاکنون چند بار زندگی به پایان رسیده است؟ </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6355/%DB%B7-%D9%86%DA%A9%D8%AA%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%81%D8%B1%D9%85%D8%AA-%D8%B9%DA%A9%D8%A7%D8%B3%DB%8C-raw/" title="۷ نکته درباره فرمت عکاسی RAW ">۷ نکته درباره فرمت عکاسی RAW </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6358/%D9%81%D8%B1%D9%88%D8%B4-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1-%D8%AC%D8%A7%D8%B3%D9%88%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA/" title="فروش گسترده ابزار جاسوسی در اینترنت">فروش گسترده ابزار جاسوسی در اینترنت</a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6324/%DA%A9%D8%AF%D8%A7%D9%85-%DA%AF%D9%88%D8%B4%DB%8C-%D9%87%D8%A7-%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C-%D8%AF%D8%A7%D8%B1%D9%86%D8%AF%D8%9F/" title="کدام گوشی ها دوربین بهتری دارند؟ ">کدام گوشی ها دوربین بهتری دارند؟ </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6330/%D8%AA%D9%84%D9%81%D9%86-%D9%87%D9%85%D8%B1%D8%A7%D9%87-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%B3%D8%B1%DB%8C%D8%B9-%D8%AA%D8%B1-%D8%B4%D8%A7%D8%B1%DA%98-%DA%A9%D9%86%DB%8C%D8%AF/" title="تلفن همراه خود را سریع تر شارژ کنید">تلفن همراه خود را سریع تر شارژ کنید</a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6326/%D8%AC%D9%84%D9%88%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B4%D8%B1%D9%88%D8%B9-%D8%AE%D9%88%D8%AF%DA%A9%D8%A7%D8%B1-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%88%DB%8C%D9%86/" title="جلوگیری از شروع خودکار برنامه ها در ویندوز ">جلوگیری از شروع خودکار برنامه ها در ویندوز </a> </li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6328/%D9%85%D8%B1%D8%A7%D9%82%D8%A8-%D9%87%D9%88%DB%8C%D8%AA-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%D8%AE%D9%88%D8%AF-%D8%A8%D8%A7%D8%B4%DB%8C%D9%85/" title="مراقب هویت مجازی خود باشیم ">مراقب هویت مجازی خود باشیم </a> </li>
+						</ul>
+						<a class="archive" href="http://www.shegeftangiz.com/all/" title="" rel="nofollow">آرشیو مطالب</a>
+					</div>
+				</div>
+				<div id="ml">
+					<div class="box-bottom" style="height: 350px">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" height="198" width="249">
+	<param name="movie" value="http://ads.goldiran.ir/images/useradv/3/300x250-v3.swf?all">
+	<param name="quality" value="High">
+	<embed src="%D8%A8%D8%B3%D8%AA%D9%86%20%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20CMD_files/300x250-v3.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" height="198" width="249"></object>
+					</div>
+					<div class="box-bottom">
+						<a class="box-top" href="http://www.shegeftangiz.com/" style="display: block; padding: 15px 0" target="_blank">عضویت در خبرنامه شگفت انگیز</a>
+					</div>
+				</div>
+			</div>
+			<div class="cls">
+				<div class="downbox-container">
+					<div class="box-top"><h1><a href="http://www.shegeftangiz.com/archive/725/%D8%A8%D8%B3%D8%AA%D9%86-%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-cmd/" title="بستن پروسه‌های ویندوز از طریق CMD">بستن پروسه‌های ویندوز از طریق CMD</a></h1></div>
+					<div class="body">
+						<h5 class="uiStreamMessage userContentWrapper" data-ft="{"><span class="messageBody" style="font-size: small; font-family: arial black,avant garde;" data-ft="{"><span class="userContent"><span dir="rtl">همان&nbsp;&nbsp;طور
+ که می&nbsp;دانید برای بستن پروسه&nbsp;های ویندوز بایستی به Task Manager
+ و سپس تب Processes مراجعه نمایید. اما شاید برای&nbsp;تان جالب باشد که 
+بدانید این کار را می&nbsp;توانید از طریق Command Prompt ویندوز نیز انجام
+ دهید، بدون اینکه به نیاز به استفاده از Task Manager داشته باشید. در این
+ ترفند به معرفی نحوه انجام این کار می&nbsp;پردازیم.</span></span></span></h5>
+<p>&nbsp;</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>بدین منظور:</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p><span class="text_exposed_show"> ابتدا کلیدهای ترکیبی Win+R را فشار دهید تا پنجره Run باز شود.</span></p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>سپس عبارت cmd را وارد کرده و Enter بزنید.</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>پس از باز شدن Command Prompt در خط فرمان این دستور را را وارد نمایید:</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>tasklist</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>با این کار لیست کامل پروسه&nbsp;های در حال اجرا در آن لحظه نمایش داده خواهد شد.</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>حال برای بستن یک پروسه این دستور را وارد نمایید:</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>taskkill /pid PID</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>به جای PID بایستی شماره&nbsp;ای که در ستون PID هر پروسه وجود دارد را وارد نمایید.</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>به عنوان مثال اگر پس از استفاده از دستور tasklist، در ستون PID 
+پروسه&nbsp;ی firefox.exe عدد 75740 درج شده بود، از این دستور برای بستن 
+پروسه&nbsp;ی firefox.exe استفاده خواهیم کرد:</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>taskkill /pid 75740</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>دقت کنید اگر پس از این کار با پیغام&nbsp; خطای ERROR: The process 
+with PID # could not be terminated روبرو شدید برای بستن اجباری این پروسه
+ بایستی از دستور زیر استفاده نمایید:</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+<p>taskkill /pid PID /f</p>
+<h5 class="uiStreamMessage userContentWrapper" data-ft="{">&nbsp;</h5>
+					</div>
+					<div class="post-info">
+						ارسال شده در سه شنبه ، ۲۴ ارديبهشت ۱۳۹۲ ، ۱۶:۰۰<br>
+						كد مطلب : ۷۲۵<br>
+						تعداد بازدید : ۳,۴۶۰<br>
+						<div style="padding-right: 20px">
+							<a href="http://www.shegeftangiz.com/6/learning/" title="آموزش">آموزش</a> » <a href="http://www.shegeftangiz.com/6/learning/5/%D8%B9%D9%85%D9%88%D9%85%DB%8C/" name="عمومی">عمومی</a>
+						</div>
+						تگ ها : <a href="http://www.shegeftangiz.com/tag/%D8%A8%D8%B3%D8%AA%D9%86/" title="" rel="tag">بستن</a> ، <a href="http://www.shegeftangiz.com/tag/%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C/" title="" rel="tag">پروسه‌های</a> ، <a href="http://www.shegeftangiz.com/tag/%D8%A8%D8%B3%D8%AA%D9%86-%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-cmd/" title="" rel="tag">بستن پروسه‌های ویندوز از طریق CMD</a> ، <a href="http://www.shegeftangiz.com/tag/%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2/" title="" rel="tag">ویندوز</a> ، <a href="http://www.shegeftangiz.com/tag/%D8%A7%D8%B2/" title="" rel="tag">از</a> ، <a href="http://www.shegeftangiz.com/tag/%D8%B7%D8%B1%DB%8C%D9%82/" title="" rel="tag">طریق</a> ، <a href="http://www.shegeftangiz.com/tag/cmd/" title="" rel="tag">CMD</a> ، 
+					</div>
+				</div>
+			</div>
+			<div class="cls">
+				<div class="downbox-container">
+					<div class="box-top">نظرات</div>
+					<div style="height: 200px; overflow: auto; margin-top: 5px">
+					
+						<div class="comment">
+							<div class="comment-top">
+								<b>شهاب</b><br>
+								&nbsp;&nbsp;&nbsp;يكشنبه ۱۶ فروردين ۱۳۹۴ ، ۰۳:۰۷
+							</div>
+							<div class="comment-center">
+							با درود, <br>
+آموزش بسیار عالی بود، خیلی ممنون<br>
+							<div class="comment-answers">
+							
+							</div>
+							</div>
+							<div class="comment-bottom"> </div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="cls">
+				<div class="downbox-container">
+					<div class="box-top">ارسال نظر</div>
+					
+					<form action="/archive/725/بستن-پروسه‌های-ویندوز-از-طریق-cmd/" method="post">
+					<table style="width: 100%">
+						<tbody><tr>
+							<td style="width: 20%; text-align: left">نام و نام خانوادگی :</td>
+							<td><input name="name" class="input" style="width: 300px" type="text"></td>
+						</tr>
+						<tr>
+							<td style="width: 20%; text-align: left">پست الكترونیك :</td>
+							<td><input name="email" class="input" style="width: 300px" dir="ltr" type="text"></td>
+						</tr>
+						<tr>
+							<td style="width: 20%; text-align: left">متن پیام :</td>
+							<td><textarea name="message" class="input" style="width: 300px; height: 150px"></textarea></td>
+						</tr>
+						<tr>
+							<td style="width: 20%; text-align: left">كد امنیتی :</td>
+							<td><img src="%D8%A8%D8%B3%D8%AA%D9%86%20%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20CMD_files/a.png" align="middle"> <input name="captcha" class="input" style="width: 100px; padding: 7px 5px" type="text"></td>
+						</tr>
+						<tr>
+							<td style="width: 20%; text-align: left"> </td>
+							<td><label><input name="private" type="checkbox"> نظر به صورت خصوصی ارسال شود .</label></td>
+						</tr>
+						<tr style="height: 40px">
+							<td style="width: 20%; text-align: left"> </td>
+							<td><button type="submit" class="button" style="margin-right: 60px">ارسال</button> <button type="reset" class="button">ریست</button></td>
+						</tr>
+					</tbody></table>
+					</form>
+				</div>
+			</div>
+			<div class="cls">
+				<div class="box" style="margin-left: 5px">
+					<div class="downbox-container">
+						<div class="box-top">آخرین مطالب مرتبط</div>
+						<ul class="list2">
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6326/%D8%AC%D9%84%D9%88%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%B2-%D8%B4%D8%B1%D9%88%D8%B9-%D8%AE%D9%88%D8%AF%DA%A9%D8%A7%D8%B1-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%87%D8%A7-%D8%AF%D8%B1-%D9%88%DB%8C%D9%86/" title="جلوگیری از شروع خودکار برنامه ها در ویندوز ">جلوگیری از شروع خودکار برنامه ها در ویندوز </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6221/%D8%BA%DB%8C%D8%B1-%D9%81%D8%B9%D8%A7%D9%84-%DA%A9%D8%B1%D8%AF%D9%86-user-account-control-%D8%AF%D8%B1-%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D9%86%D8%B5%D8%A8-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87/" title="غیر فعال کردن User Account Control در هنگام نصب برنامه ">غیر فعال کردن User Account Control در هنگام نصب برنامه </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6171/%D8%A2%D9%BE%D8%AF%DB%8C%D8%AA-%D9%88-%D9%82%D8%A7%D8%A8%D9%84%DB%8C%D8%AA%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A7%D9%BE%D9%84%E2%80%8C%D9%88%D8%A7%DA%86/" title="آپدیت و قابلیت‌های جدید اپل‌واچ ">آپدیت و قابلیت‌های جدید اپل‌واچ </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6158/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%B4%DA%A9%D9%84%DA%A9%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%BE%DB%8C%D8%B4%E2%80%8C%D9%81%D8%B1%D8%B6-%D8%AF%D8%B1-whatsapp/" title="آموزش تغییر شکلک‌های پیش‌فرض در Whatsapp ">آموزش تغییر شکلک‌های پیش‌فرض در Whatsapp </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6109/5-%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA%D8%AE%D8%B1%D8%A7%D8%AC-%D8%B9%DA%A9%D8%B3-%D8%A7%D8%B2-%D9%81%D8%A7%DB%8C%D9%84-%D9%BE%DB%8C-%D8%AF%DB%8C-%D8%A7%D9%81/" title="5 ابزار استخراج عکس از فایل پی دی اف ">5 ابزار استخراج عکس از فایل پی دی اف </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6036/%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%DA%86%D9%86%D8%AF-%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF%DB%8C-%D8%AF%D8%B1-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D9%81%D9%86%D8%A7%D9%88/" title="معرفی چند اصطلاح کاربردی در دنیای فناوری اطلاعات">معرفی چند اصطلاح کاربردی در دنیای فناوری اطلاعات</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/5997/%D8%A8%D9%87-%D8%A7%DB%8C%D9%86-%D8%AF%D9%84%D8%A7%DB%8C%D9%84-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D9%87%D8%A7%D8%B1%D8%AF%D8%AA%D8%A7%D9%86-%D8%B1%D8%A7-%D8%AF%DB%8C%D9%81%D8%B1%DA%AF-%DA%A9%D9%86%DB%8C/" title="به این دلایل نباید هاردتان را دیفرگ کنید">به این دلایل نباید هاردتان را دیفرگ کنید</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/5958/%D8%B1%D9%88%D8%B4%E2%80%8C%D9%87%D8%A7%DB%8C%DB%8C-%D8%AC%D8%A7%D9%84%D8%A8-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%A7%D8%B3%DA%A9%D8%A7%DB%8C%D9%BE/" title="روش‌هایی جالب برای استفاده از اسکایپ ">روش‌هایی جالب برای استفاده از اسکایپ </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/5936/%D9%BE%D8%B1%D8%B3%D8%B4-%D9%88-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%BE%DB%8C%D8%B1%D8%A7%D9%85%D9%88%D9%86-%D8%B1%D9%88%D8%AA-%DA%A9%D8%B1%D8%AF%D9%86/" title="پرسش و پاسخ پیرامون روت کردن">پرسش و پاسخ پیرامون روت کردن</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/5933/%D9%87%D8%AF%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D9%82%D8%B9%DB%8C%D8%AA-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%DA%86%DB%8C%D8%B3%D8%AA%D8%9F/" title="هدست های واقعیت مجازی چیست؟">هدست های واقعیت مجازی چیست؟</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="box" style="margin-left: 0">
+					<div class="downbox-container">
+						<div class="box-top">برترین مطالب مرتبط</div>
+						<ul class="list2">
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/553/%D8%AD%D9%84-%D8%AE%D8%B7%D8%A7%DB%8C-the-disk-is-write-protected-%D8%A8%D8%A7-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-5-%D8%B1%D9%88%D8%B4-%D8%B3%D8%A7%D8%AF%D9%87/" title="حل خطای The disk is write-protected با استفاده از 5 روش ساده ">حل خطای The disk is write-protected با استفاده از 5 روش ساده </a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/4120/%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-%D9%88-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%DA%A9%D8%A7%D9%85%D9%84-%D9%82%D8%A7%D8%A8%D9%84%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A2%D9%86/" title="اینستاگرام و آموزش کامل قابلیت های آن">اینستاگرام و آموزش کامل قابلیت های آن</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/2606/%D9%85%D8%B4%DA%A9%D9%84-%D8%B9%D8%AF%D9%85-%D8%A8%D8%B1%D9%82%D8%B1%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D8%B7-%D8%A8%D9%84%D9%88%D8%AA%D9%88%D8%AB-%D8%B1%D8%A7-%D8%AD%D9%84-%DA%A9%D9%86/" title="مشکل عدم برقراری ارتباط بلوتوث را حل کنید">مشکل عدم برقراری ارتباط بلوتوث را حل کنید</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/809/%D8%B1%D9%88%D8%B4-%D9%87%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D9%88-%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1-%D8%AF%D8%B1-%D9%81%D8%AA%D9%88%D8%B4%D8%A7%D9%BE/" title="روش های انتقال و ترکیب تصاویر در فتوشاپ">روش های انتقال و ترکیب تصاویر در فتوشاپ</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/670/%D8%AA%DA%AF%E2%80%8C%DA%A9%D8%B1%D8%AF%D9%86-%D8%A8%D9%87-%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-%D8%B1%D8%B3%DB%8C%D8%AF/" title=" تگ‌کردن به اینستاگرام رسید"> تگ‌کردن به اینستاگرام رسید</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/616/%D9%85%D9%87%D9%85%D8%AA%D8%B1%DB%8C%D9%86-%D8%B9%D8%A7%D9%85%D9%84-%D8%B3%D9%88%D8%AE%D8%AA%D9%86-%D9%81%D9%84%D8%B4-%D9%85%D9%85%D9%88%D8%B1%DB%8C/" title="مهمترین عامل سوختن فلش مموری">مهمترین عامل سوختن فلش مموری</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/940/%D8%B3%D8%B1%DB%8C-%D8%AC%D8%AF%DB%8C%D8%AF-%DA%A9%D8%AF%D9%87%D8%A7%DB%8C-%D9%85%D8%AE%D9%81%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%D8%B3%D9%84/" title=" سری جدید کدهای مخفی ایرانسل"> سری جدید کدهای مخفی ایرانسل</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/244/%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D9%87%D8%B1%D8%B3%D8%AA-%D9%85%D8%B7%D8%A7%D9%84%D8%A8-%D8%AF%D8%B1-microsoft-word/" title="ساخت فهرست مطالب در Microsoft Word">ساخت فهرست مطالب در Microsoft Word</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/749/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D8%B3%D8%B1%D8%B9%D8%AA-%D8%A8%D8%A7%D9%84%D8%A7-%D8%A2%D9%85%D8%AF%D9%86-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%D9%88%DB%8C%D8%B3%D8%AA%D8%A7-%D9%88-7-%D8%A8/" title="افزایش سرعت بالا آمدن ویندوز ویستا و 7 با انجام یک تنظیم ساده">افزایش سرعت بالا آمدن ویندوز ویستا و 7 با انجام یک تنظیم ساده</a></li>
+							<li class="box-li"><a href="http://www.shegeftangiz.com/archive/660/%DB%B1%DB%B5-%D9%86%DA%A9%D8%AA%D9%87-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1%DB%8C-%DA%A9%D9%87-%D8%A7%DA%AF%D8%B1-%D9%86%D8%AF%D8%A7%D9%86%DB%8C%D8%AF-%D8%A8%D8%A7%D8%B9%D8%AB-%D8%AE%D9%86/" title="۱۵ نکته کامپیوتری که اگر ندانید باعث خنده دیگران می‌شوید!">۱۵ نکته کامپیوتری که اگر ندانید باعث خنده دیگران می‌شوید!</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cls">
+	<div class="down-box" style="margin-left: 4px">
+	<div class="downbox-container">
+		<div class="box-top">برترین مطالب روز</div>
+		<ul class="list2">		</ul>
+	</div>
+</div>
+<div style="display:none;">
+<a style="font-size:1px" title="خريد vpn" href="http://www.favpn.info/">خريد vpn</a>
+</div>
+<div class="down-box" style="margin-left: 4px">
+	<div class="downbox-container">
+		<div class="box-top">برترین مطالب هفته</div>
+		<ul class="list2">		</ul>
+	</div>
+</div>
+<div class="down-box" style="margin-left: 4px">
+	<div class="downbox-container">
+		<div class="box-top">برترین مطالب ماه</div>
+		<ul class="list2">		</ul>
+	</div>
+</div>
+<div class="down-box">
+	<div class="downbox-container">
+		<div class="box-top">برترین مطالب سال</div>
+		<ul class="list2">
+			<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6159/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF%D8%B1%D9%87%D8%A7-%DA%86%D9%87-%DA%A9%D8%A7%D8%B1%D9%87%D8%A7-%DA%A9%D9%87-%D9%86%D9%85%DB%8C-%DA%A9%D9%86%D8%AF/" title="گوشی میلیاردرها چه کارها که نمی کند!">گوشی میلیاردرها چه کارها که نمی کند!</a></li>
+			<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6356/%DA%86%DA%AF%D9%88%D9%86%D9%87-pin-code-%D9%81%D8%B1%D8%A7%D9%85%D9%88%D8%B4-%D8%B4%D8%AF%D9%87-%DA%AF%D9%88%D8%B4%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%A7%D8%B2-%DA%A9%D9%86%DB%8C%D9%85%D8%9F/" title="چگونه PIN code فراموش شده گوشی را باز کنیم؟ ">چگونه PIN code فراموش شده گوشی را باز کنیم؟ </a></li>
+			<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6353/%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87%D8%A7%D8%AA-%D8%B1%D8%A7%DB%8C%D8%AC-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%81%D8%B6%D8%A7%DB%8C-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C/" title="اشتباهات رایج کاربران در فضای مجازی">اشتباهات رایج کاربران در فضای مجازی</a></li>
+			<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6324/%DA%A9%D8%AF%D8%A7%D9%85-%DA%AF%D9%88%D8%B4%DB%8C-%D9%87%D8%A7-%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C-%D8%AF%D8%A7%D8%B1%D9%86%D8%AF%D8%9F/" title="کدام گوشی ها دوربین بهتری دارند؟ ">کدام گوشی ها دوربین بهتری دارند؟ </a></li>
+			<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6164/%DB%B2%DB%B0-%D9%88%D8%A7%D9%82%D8%B9%DB%8C%D8%AA-%D8%AF%DB%8C%D9%88%D8%A7%D9%86%D9%87%E2%80%8C%DA%A9%D9%86%D9%86%D8%AF%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-clash-of-clans/" title="۲۰ واقعیت دیوانه‌کننده درباره Clash of Clans  ">۲۰ واقعیت دیوانه‌کننده درباره Clash of Clans  </a></li>
+			<li class="box-li"><a href="http://www.shegeftangiz.com/archive/6313/%D8%AA%D9%84%D9%81%D9%86-%D9%87%D9%85%D8%B1%D8%A7-%DA%AF%D9%85-%D8%B4%D8%AF%D9%87-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AF%D8%B1-%D8%AD%D8%A7%D9%84%D8%AA-silent-%D9%BE%DB%8C%D8%AF%D8%A7-%DA%A9%D9%86/" title="تلفن همرا گم شده خود را در حالت silent پیدا کنید!">تلفن همرا گم شده خود را در حالت silent پیدا کنید!</a></li>
+		</ul>
+	</div>
+</div>
+	</div>
+</div></div>
+<div class="footer">
+	Powered By SNMPortal Fun Edition<br>
+	Programmed By FaDesign.IR<br>
+	Page generation : 0.157 second
+	<!-- 23 !-->
+</div>
+
+<!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script><script src="%D8%A8%D8%B3%D8%AA%D9%86%20%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20CMD_files/js15.js" type="text/javascript"></script>
+<a href="http://www.histats.com/" target="_blank" title="website free tracking"><script type="text/javascript">
+try {Histats.start(1,2194693,4,515,95,18,"00010000");
+Histats.track_hits();} catch(err){};
+</script><div id="histats_counter_6898" style="display: block;"><a href="http://www.histats.com/viewstats/?sid=2194693&amp;ccid=515" target="_blank"><canvas id="histats_counter_6898_canvas" width="98" height="21"></canvas></a></div></a><script src="%D8%A8%D8%B3%D8%AA%D9%86%20%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20CMD_files/0.htm" type="text/javascript" async=""></script><script src="%D8%A8%D8%B3%D8%AA%D9%86%20%D9%BE%D8%B1%D9%88%D8%B3%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2%20%D8%A7%D8%B2%20%D8%B7%D8%B1%DB%8C%D9%82%20CMD_files/cc_515.js" type="text/javascript" async=""></script>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2194693&101" alt="website free tracking" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+
+</body></html>

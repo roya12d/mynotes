@@ -1,0 +1,874 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* font dast-nevis (start) ******************************************************* */
+@font-face {
+font-family:'dast-nevis';
+src:url('../fonts/dast-khat/Dast_Nevis.eot?#') format('eot'), url('../fonts/dast-khat/Dast_Nevis.woff')
+format('woff'), url('../fonts/dast-khat/Dast_Nevis.ttf') format('truetype');
+}
+/* font dast-nevis (end) */
+
+/* font b-yekan (start) ******************************************************* */
+@font-face {
+font-family:'b-yekan';
+src:url('../fonts/b-yekan/b-yekan.eot?#') format('eot'), url('../fonts/b-yekan/b-yekan.woff')
+format('woff'), url('../fonts/b-yekan/b-yekan.ttf') format('truetype');
+}
+/* font b-yekan (end) */
+
+
+
+/* تعیین رنگ متن انتخاب شده */
+::selection { /* WebKit/Blink Browsers */
+  background: #99F;
+  color:#FFF;
+}
+::-moz-selection { /* Gecko Browsers */
+  background: #99F;
+  color:#FFF;
+}
+
+/*---------------------------------------------------*/
+.k-all-blocks{ /* example-block     publicity-blocks    index.php pages    for all white blocks with header */
+	 padding-top:5px !important; 
+	 padding-bottom:15px !important;
+}
+
+.k-example-block{ 
+	 margin-top:25px !important; 
+	 margin-bottom:25px !important;
+}
+
+.k-poniter-block{ 
+	 margin-top:25px !important; 
+	 margin-bottom:25px !important;
+}
+
+.k-poniter-2-block{ 
+	 margin-top:25px !important; 
+	 margin-bottom:25px !important;
+}
+
+.k-example-block header > h2{ /* in this class and just h2 that is child of header, not other h2 that is in block content */
+	 color:#FFF !important; 
+	 font-size:18px !important; 
+	 padding:10px !important; 
+	 margin:0px !important;
+}
+.k-poniter-block header > h2{ /* in this class and just h2 that is child of header, not other h2 that is in block content */
+	 color:#FFF !important; 
+	 font-size:18px !important; 
+	 padding:10px !important; 
+	 margin:0px !important;
+}
+.k-poniter-2-block header > h2{ /* in this class and just h2 that is child of header, not other h2 that is in block content */
+	 color:#FFF !important; 
+	 font-size:18px !important; 
+	 padding:10px !important; 
+	 margin:0px !important;
+}
+
+
+.k-poniter-block header{ /* in this class and just h2 that is child of header, not other h2 that is in block content */
+	 color:#FFF !important; 
+	 font-size:18px !important; 
+	 padding:10px !important; 
+	 margin:0px !important;
+	 background-color:#4CAF50 !important;
+}
+/* تعریف کد سی اس اس بلوک مثال بعد از بلوک نکته باشد - به دلیل بلوک های مثالی که درون بلوک نکته قرار می گیرند */
+.k-example-block header{ /* in this class and just h2 that is child of header, not other h2 that is in block content */
+	 color:#FFF !important; 
+	 font-size:18px !important; 
+	 padding:10px !important; 
+	 margin:0px !important;
+	 background-color:#2196F3 !important;
+}
+.k-poniter-2-block header{ /* in this class and just h2 that is child of header, not other h2 that is in block content */
+	 color:#FFF !important; 
+	 font-size:18px !important; 
+	 padding:10px !important; 
+	 margin:0px !important;
+	 background-color:#F44336 !important;
+}
+/*---------------------------------------------------*/
+#content .k-result-title {
+	color:#F00;
+    text-align:right;
+    direction:rtl;
+	padding-top:10px;      
+}
+
+/*---------------------------------------------------*/
+/* لیست دسته بندی های ستون سمت راست */
+
+.k-categories-of-subject-1 a{
+	text-decoration:none !important;
+}
+
+.k-categories-of-subject-1-1{
+	width:60px !important; 
+	float:right !important;
+}
+
+.k-categories-of-subject-1-1 img{
+	margin:4px;
+}
+
+.k-categories-of-subject-1-2{
+	color:#FFF; 
+	padding:10px; 
+	font-size:18px;
+}
+
+.k-categories-of-subject-2 a{
+	text-decoration:none !important;
+}
+
+.k-categories-of-subject-2-1 {
+	width:99%;	
+	vertical-align:middle;	
+	height:30px; 
+    padding-right:0.5%;
+    padding-left:0.5%;
+	padding-top:5px;
+	text-align:center;
+	/* filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0FF',endColorstr='#0099CC',GradientType=0); */
+}
+
+.k-categories-of-subject-2-1-1{
+	padding-right:9%;
+}
+
+.k-categories-of-subject-2-1-1-1{
+	float:left;
+}
+
+.k-categories-of-subject-2-2{
+
+}
+
+.k-categories-of-subject-2-3{
+	margin-top:10px;
+}
+
+.k-categories-of-subject-2-3 a{
+	text-decoration:none !important;
+}
+
+.k-categories-of-subject-2-3 h5{
+	color:#FFF; 
+	text-align:center;
+}
+
+.k-categories-of-subject-2-4{
+	margin-top:8px;
+	min-height:72px;
+}
+
+.k-categories-of-subject-2-4-1{
+	width:70px !important; 
+	float:right !important;
+}
+
+.k-categories-of-subject-2-4-1-1{
+	font-size:15px;
+}
+
+.k-categories-of-subject-2-4-1-2{
+	color:#00F;
+}
+
+.k-categories-of-subject-2-4-1-2-1 {
+	color:#666;
+	font-size:15px; 
+	padding:6px;
+	/* background-color:green; */
+}
+
+.k-categories-of-subject-2-4-1-2-1:hover{
+	/* background-color:blue !important; */
+	color:#09F !important;
+}
+
+/*---------------------------------------------------*/
+/* لیست کلیدهای یک دسته بندی */
+
+.k-keys-of-category-1{
+	margin-top:20px;
+}
+
+.k-keys-of-category-1 header{
+	color:#FFF !important; 
+	font-size:22px; 
+	padding:10px; 
+	margin:0px;
+}
+
+.k-keys-of-category-2{
+	margin-top:20px;
+}
+
+.k-keys-of-category-2 header{
+	color:#FFF !important; 
+	font-size:22px; 
+	padding:10px; 
+	margin:0px;
+}
+
+.k-keys-of-category-3{
+	margin-top:20px;
+}
+
+.k-keys-of-category-3 header{
+	color:#FFF !important; 
+	font-size:22px; 
+	padding:10px; 
+	margin:0px;
+}
+
+.k-keys-of-category-4{
+	margin-top:20px;
+}
+
+.k-keys-of-category-4 header{
+	color:#FFF !important; 
+	font-size:22px; 
+	padding:10px; 
+	margin:0px;
+}
+
+.k-keys-of-category-5{
+	margin-top:20px;
+}
+
+.k-keys-of-category-5 header{
+	color:#FFF !important; 
+	font-size:22px; 
+	padding:10px; 
+	margin:0px;
+}
+
+.k-keys-of-category-6{
+	margin-top:20px;
+}
+
+.k-keys-of-category-6 header{
+	color:#FFF !important; 
+	font-size:22px; 
+	padding:10px; 
+	margin:0px;
+}
+
+/* content_list_of_categgory (start) *******************************************************    لیست نمایش مبحث های هر دسته بندی */
+ul.content_list_of_categgory {
+    /* list-style:decimal; */
+	list-style:none;
+	font-size:12px;
+	font-weight:bold;
+}		  
+	
+ul.content_list_of_categgory li a {
+	width:100%;
+    text-decoration:none;
+	color:#000;
+    display:inline-block;
+    width:100%;
+    padding:10px;;
+    border-style:solid;
+    border-width:0px;	
+	background-color:light-blue;	 	
+}
+					  
+ul.content_list_of_categgory li {			 	 
+    padding-left:0px;
+    padding-right:0px;
+    padding-top:8px;
+}	
+
+/*		  
+.content_list_of_categgory a:hover {
+	background-color:purple;
+	color:#FFF;
+}
+*/
+
+li.k-content-of-key-1-li a {
+    font-size:14px;
+	color:#666 !important;
+}
+
+li.k-content-of-key-1-li a:hover {
+    /* background-color:purple; */
+	color:#09F !important;
+}
+
+li.k-content-of-key-2-li a:hover {
+    background-color:purple;
+	color:#FFF;
+}
+
+li.k-content-of-key-3-li a:hover { /* With_Small_Image */
+    
+}
+
+li.k-content-of-key-4-li a:hover { /* With_Large_Image */
+    
+}
+/* content_list_of_categgory (end) */
+
+/*---------------------------------------------------*/
+/* نمایش اطلاعات کلید */
+
+.k-content-of-key-1-1{
+	width:35px !important; 
+	float:right !important; 
+	margin-left:4px;
+	min-height:47px;
+}
+
+.k-content-of-key-1-1 img{
+	vertical-align:middle;
+}
+
+.k-content-of-key-1-2{
+	width:35px !important; 
+	float:right !important; 
+	margin-right:10px;
+}
+
+.k-content-of-key-1-2-1{
+	background-color:blue; 
+	font-size:11px !important; 
+	color:#FFF; 
+	direction:ltr;
+	text-align:center;
+}
+
+.k-content-of-key-2-1{
+	width:35px !important; 
+	float:right !important; 
+	margin-left:4px;
+}
+
+.k-content-of-key-2-1 img{
+	vertical-align:middle;
+}
+
+.k-content-of-key-2-2{
+	width:35px !important; 
+	float:right !important; 
+	margin-left:4px;
+}
+
+.k-content-of-key-2-2-1{
+	background-color:blue; 
+	font-size:14px; 
+	color:#FFF; 
+	direction:ltr;
+}
+
+.k-content-of-key-3{
+	
+}
+
+.k-content-of-key-3-li{
+	padding-top:20px; 
+	margin-top:20px;
+	list-style-type:none;
+}
+
+.k-content-of-key-3-li a{
+	padding:0px !important; 
+}
+
+.k-content-of-key-3-1{
+	
+}
+
+.k-content-of-key-3-1{
+	font-size:25px !important; 
+	padding:10px; 
+	color:#666 !important;
+}
+
+.k-content-of-key-3-2{
+	width:200px !important;
+	float:right !important;
+}
+
+.k-content-of-key-3-2 img{
+	vertical-align:middle; 
+	margin:0px;
+}
+
+.k-content-of-key-3-2-1{
+	color:#FFF;
+	background-color:blue; 
+	direction:ltr;
+}
+
+.k-content-of-key-4{
+	
+}
+
+.k-content-of-key-4-li{
+	padding-top:20px; 
+	margin-top:20px;
+	list-style-type:none;
+}
+
+.k-content-of-key-4-li a{
+	padding:0px; 
+}
+
+.k-content-of-key-4-1{
+	color:#666 !important; 
+	font-size:25px; 
+	padding:10px; 
+	margin:0px;
+}
+
+.k-content-of-key-4-2 img{
+	vertical-align:middle; 
+	margin:0px;
+}
+
+.k-content-of-key-4-2-1{
+	background-color:blue; 
+	color:#FFF;
+	direction:ltr;
+}
+
+/*---------------------------------------------------*/
+/* android-sell-menu  */
+
+.k-android-sell-menu-1 li{
+	padding:3px;
+	font-size:16px !important;
+	list-style-type:none;
+}
+
+.k-android-sell-menu-1 a{
+	color:#FFF !important;
+}
+
+/*---------------------------------------------------*/
+/* منوی متنی در بالای سایت */
+@media (max-width: 768px) {
+    #k-text-menu-1{
+		display:none;
+	}
+}
+
+#k-text-menu-1{
+	margin-top:15px;
+	font-family:b-yekan !important;
+}
+
+#k-text-menu-1 ul{
+	list-style:none;
+	position:relative;
+	float:right;
+	margin:0;
+	padding:0;
+}
+
+#k-text-menu-1 ul a{
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:16px;
+	line-height:32px;
+	padding:0 10px;
+}
+
+#k-text-menu-1 ul li{
+	position:relative;
+	float:right;
+	margin:0;
+	padding:0;
+}
+
+#k-text-menu-1 ul li.current-menu-item{
+	background:#ddd;
+}
+
+#k-text-menu-1 ul li:hover{
+	
+}
+
+#k-text-menu-1 ul ul{
+	display:none;
+	position:absolute;
+	top:100%;
+	right:0;
+	background-color:#9933FF;
+	padding:0;
+	z-index:10000;
+}
+
+#k-text-menu-1 ul ul li{
+	float:none;
+	width:200px;
+}
+
+#k-text-menu-1 ul ul a{
+	line-height:120%;
+	padding:10px 15px;
+	color:#FFF;
+	direction:rtl;
+	text-align:right;
+	font-size:14px;
+}
+
+#k-text-menu-1 ul ul ul{
+	top:0;
+	right:100%;
+	z-index:10000;
+}
+
+#k-text-menu-1 ul li:hover > ul
+{
+	display:block;
+}
+
+/*---------------------------------------------------*/
+/* لیست سوره های قرآن در ستون سمت راست */
+/* k-quran-surah-list-1 */
+
+.k-independent-buttons-for-category-list-1 a{
+	color:#FFF;
+	font-size:16px;
+}
+
+.k-independent-buttons-for-category-list-1 a:hover{
+	color:#FFF;
+	text-decoration:none;
+}
+
+.k-independent-buttons-for-category-list-1-1{
+	margin:5px; 
+	padding:5px;
+}
+
+.k-independent-buttons-for-category-list-1-1:hover{
+	background-color:blue !important;
+}
+
+/*---------------------------------------------------*/
+/* لیست آیه های یک سوره قرآن */
+
+.k-quran-aya-list-1{
+	margin-top:20px;
+}
+
+.k-quran-aya-list-1 header > h2{
+	color:#FFF !important;  
+	padding:10px !important; 
+	margin:0px !important;
+}
+
+.k-quran-aya-list-1-2-1{
+	margin-top:30px;
+}
+
+.k-quran-aya-list-1-2-1 header > h2{
+	color:#FFF; 
+	font-size:30px !important; 
+	padding:20px !important; 
+	margin:0px !important;
+	line-height:50px !important;
+}
+
+.k-quran-aya-list-1-2-1-2{
+	padding:20px !important; 
+	font-size:16px !important;
+}
+
+/*---------------------------------------------------*/
+/* آیتم های لیست بینهایت فروشگاه اندروید */
+
+.k-android-sell-infinite-scrolling-item-1{
+	background-color:#FFF !important; 
+	width:150px !important; 
+	height:250px !important; 
+	display:block;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1{
+	margin-top:0px;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1{
+	padding-top:0px; 
+	border-width:0px; 
+	width:100% !important;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1 a{
+	position:relative !important;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1-1{
+	position:relative !important; 
+	display:block; 
+	z-index:100; 
+	padding-top:10px; 
+	margin:auto;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1-1 img{
+	position:relative !important;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1-2{
+	position:relative !important; 
+	display:block; 
+	width:100% !important; 
+	height:90px !important; 
+	padding:0px; 
+    padding-top:5px; 
+	text-align:center !important; 
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1-2 p{
+	width:100% !important; 
+	padding:5px !important; 
+	color:#666 !important; 
+	text-align:center !important;
+}
+
+.k-android-sell-infinite-scrolling-item-1-1-1-3{
+	position:relative !important; 
+	padding-top:0px !important; 
+	padding-right:5px !important; 
+	font-size:13px !important;
+}
+
+/*---------------------------------------------------*/
+/* منوی بالای سایت به صورت بلوک ها - نمایش با موس */
+@media (max-width: 601px) {
+	/*
+    #k-menu-blocks-1{
+		display:none;
+	}
+	*/
+	#k-android-sell-menu-1{
+		display:none;
+	}
+}
+
+/*---------------------------------------------------*/
+/* پنهان کردن اولیت لیست دسته بندی در صفحه - هنگام کوچک شدن عرض */
+@media (max-width: 601px) {
+	.Kelidestan_First_Category_List_In_Page{
+		display:none;
+	}
+}
+
+
+
+
+/* دکمه گوگل پلاس و گزینه های کاربر */
+/*
+@media (max-width: 800px) {
+	#k-google-plus-1{
+		display:none;
+	}
+	#k-user-options-1{
+		display:none;
+	}
+}
+*/
+
+
+
+/*---------------------------------------------------*/
+/* لینک های صفحه اصلی سایت برای گروه های موضوع */
+a.subject_group_link{
+	margin:10px; 
+	padding:10px; 
+	background-color:green; 
+	color:#FFF;
+}
+
+a.subject_group_link:hover{
+	color:#FFF;
+	background-color:blue !important;
+}
+
+/*---------------------------------------------------*/
+/* دسترسی سریع به لیست دسته بندی های هر موضوع */
+.k-categories-list_fast-access-1{
+	display:block; 
+	margin:10px;
+}
+.k-categories-list_fast-access-1:hover{
+	text-decoration:none;
+}
+
+.k-categories-list_fast-access-1-1 {
+	color:#666;
+	font-size:16px; 
+	line-height:20px;
+	padding:6px;
+	/* background-color:green; */
+	width:auto !important; 
+	color:#FFF;
+}
+
+.k-categories-list_fast-access-1-1:hover{
+	/* background-color:blue !important; */
+	text-decoration:none;
+	color:#FF0;
+}
+
+/*---------------------------------------------------*/
+/*  
+.example {
+    position:relative;
+    height:50px;
+}
+
+#nav,#nav ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:relative;
+}
+#nav {
+	right:0;
+	top:0;
+	background-color:#0FF; 
+	background:transparent;
+	z-index:999999999999999999999;
+}
+#nav li {
+	float:right;
+	position:relative;
+	background-color:#F0F;  
+}
+#nav li a {
+	color:#fff;
+	display:block;
+	float:right;
+	font-size:14px;
+	height:51px;
+	line-height:40px;
+	padding:0 10px;
+	position:relative;
+	text-decoration:none;
+	z-index:999999999999999999999;
+}
+#nav li:first-child a {
+	padding-right::35px;
+}
+#nav li ul li:first-child a {
+	background-image:none;
+	padding-right:10px;
+}
+#nav li.pad {
+}
+#nav ul {
+	background-color:#09F;
+	padding:10px 0;
+	position:absolute;
+	top:-175px;
+	width:180px;
+	z-index:-1000;
+
+
+	border-radius:8px; 
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	transition:0.3s ease-in-out;
+	box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow:2px 2px 3px rgba(0, 0, 0, 0.5);
+	-moz-transition:0.3s ease-in-out;
+	-o-transition:0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+#nav ul li {
+	width:180px;
+}
+#nav ul li a {
+	background:transparent;
+	height:20px;
+	line-height:20px;
+	width:160px;
+}
+#nav:hover {
+	
+}
+#nav li:hover ul {
+	-moz-transform:translate(0,221px); 
+	-o-transform:translate(0,221px);
+	-webkit-transform:translate(0,221px);
+	transform: translate(0,221px);
+}
+#nav a:hover,#nav li:hover > a {
+	color:#99ff33;
+}
+*/
+
+/*---------------------------------------------------*/
+/* لیست همه کلیدهای یک گروه کلید، در تولتیپ مربوط به دکمه بعدی و قبلی */
+ul.key_group_all_keys_list_in_tooltip{
+	margin:15px;
+}
+
+ul.key_group_all_keys_list_in_tooltip li{
+	padding:6px;
+}
+
+ul.key_group_all_keys_list_in_tooltip a{
+	font-size:16px;
+	color:#FFF;
+	line-height:23px;
+}
+
+ul.key_group_all_keys_list_in_tooltip a:hover{
+	color:#FF0;
+	text-decoration:none;
+}
+/*---------------------------------------------------*/
+/* جدول آخرین ارسال های انجمن در موضوعات مختلف */
+.k-table-mybb-last-post{				
+}
+.k-table-mybb-last-post tr{
+}
+.k-table-mybb-last-post td{
+	direction:rtl !important; 
+	text-align:right !important;
+}
+.k-table-mybb-last-post td a{
+	color:#333 !important;
+}
+.k-table-mybb-last-post td a:hover{
+	color:#09C !important;
+}
+.k-table-mybb-last-post tbody{
+}
+.k-table-mybb-last-post thead{
+	color:#FFF;
+}
+.k-table-mybb-last-post thead th{
+	text-align:center;
+}
+/*---------------------------------------------------*/
+
+/*---------------------------------------------------*/
+
+
+
+
+
+
+		   
+
+

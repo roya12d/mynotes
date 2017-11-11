@@ -1,0 +1,184 @@
+.BodyBlockText, .TitleBlockText, .MessageTitleText, .MassegeCenterText, .NewsFootText, .NewsBodyText, .NewsTitleText {
+	direction:rtl;
+}
+.BodyBlockText {
+	padding-right:10px;
+}
+.TitleBlockText {
+	padding:5px 10px 0 0;
+}
+.MassegeCenterText {
+	padding-right:20px;
+}
+.NewsFootText {
+	padding-right:20px;
+}
+.MoreNews {
+	margin-left:7px;
+	float:left;
+}
+.NewsBodyText {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+#Center {
+	float: right;
+	margin-right: 9px;
+}
+.NewsTitle {
+	background-image:url(../images/titlenews.jpg);
+}
+.NewsRating {
+	float: left;
+	margin-left: 37px;
+	margin-top: 30px;
+	overflow: hidden;
+	width: 100px;
+}
+.NewsTitleText {
+	padding-right: 10px;
+}
+
+#HeaderFoot {
+/*
+	background-image:url(../images/middle-top.png);
+*/	
+}
+
+#Menu {
+	float: right;
+	margin: 12px 63px 0 0;
+}
+.Item {
+	float:right;
+	text-align: center;
+	width: 94px;
+	font-size:11px;
+}
+.Login {
+	float: left;
+	margin-left: 140px;
+	width: 323px;
+}
+#RegText {
+    float: left;
+    margin-top: -10px;
+    padding-left: 80px;
+    width: 230px;
+}
+#FooterDivider {
+	float:right
+}
+#CopyRight {
+	padding-right:10px;
+	margin-left:10px;
+	float:right;
+}
+#InputSubmit {
+	float:right;
+	margin-right: 5px;
+}
+#InputSubmit input {
+	background-color:transparent;
+	border:0;
+	background-image:url(../images/button.png);
+	background-position: center top;
+	width:61px;
+	height:25px;
+	outline:none;
+}
+#InputSubmit input:hover {
+	background-position: center center;
+	outline:none;
+}
+#InputSubmit input:active {
+	background-position: center bottom;
+	outline:none;
+}
+#PassText {
+	color:#7b7a7b;
+	margin-left: 69px;
+}
+#UserText {
+	color:#7b7a7b;
+	float:right;
+	margin-right:5px;
+}
+#InputPass {
+	float:right;
+	margin-right: 5px;
+}
+#InputUser {
+	float:right;
+	margin-right: 5px;
+}
+.NewsRating .unit-rating {
+	margin-bottom: 0;
+	margin-left: -8px;
+	margin-top: 6px;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+#lightbox {
+	background-color: #eee;
+	padding: 10px;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+}
+#lightboxCaption {
+	color: #333;
+	background-color: #eee;
+	font-size: 90%;
+	text-align: center;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+}
+#lightboxIndicator {
+	border: 1px solid white;
+}
+#lightboxOverallView,
+#overlay {
+	background-color: #000;
+	opacity: 8.5;
+}
+* html #lightboxOverallView,
+* html #overlay {
+	background-color: #000;
+	filter: Alpha(opacity=50);
+}
+
+.galcat {
+	text-align:center;
+	border:0px;
+	background-image:url('../images/gallery/bg.png');
+	background-repeat:no-repeat;
+	width:220px;
+	height:150px;
+	float:right;
+	margin-left:10px;
+
+}
+
+.galcat:hover {
+	background-image:url('../images/gallery/bg-ho.png');
+}
+
+.galpic {
+	text-align:center;
+	border:1px solid #117304;
+	background-color:#dbdbdb;
+	background-repeat:no-repeat;
+	float:right;
+	margin-left:10px;
+
+}
+
+.galpic:hover {
+	background-color:#68e8ff;
+}
+
+ul {list-style:none;}
+
+.tableborders {border:1px solid #cccccc;padding:3px;}
+.tableborders  td {border:1px solid #cccccc;}

@@ -1,0 +1,15 @@
+/*startIframeDate*/
+.IframeDate
+{
+	width:150;
+	height:50;
+}
+/*endIframeDate*/
+/*startdate*/
+.Date
+{
+	font-family:Tahoma;
+	font-size:x-small;	
+	color:#cd3736;
+}
+/*enddate*/

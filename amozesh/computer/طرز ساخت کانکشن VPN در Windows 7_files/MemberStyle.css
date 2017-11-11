@@ -1,0 +1,289 @@
+.membergrid
+{
+	border-color:#3366CC;
+	background-color:White;
+	border-style:dashed;
+	border-width:1px;
+	padding:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	width:97%;	
+	text-align:center;	
+	vertical-align:middle;
+	color:Navy;
+	
+	
+}
+
+.AlternateGridStyle
+{
+	background-color:#EEEEEE;
+	border-color:White;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;	
+	vertical-align:middle;
+	color:666666;
+	
+}
+.AlternateGridStyle  a:link
+{
+	background-color:#EEEEEE;
+	border-color:White;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;	
+	vertical-align:middle;
+	color:666666;
+}
+.AlternateGridStyle  a:visited
+{
+	background-color:#EEEEEE;
+	border-color:White;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;	
+	vertical-align:middle;
+	color:666666;
+}
+.footermember
+
+{
+	border-color:#3366CC;
+	background-color:Transparent;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;	
+	vertical-align:middle;	
+	color:#003399;
+}
+.headermember
+{
+	background-color:silver;
+	border-color:#3366CC;
+	border-style:dotted;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+	color:Navy;	
+}
+.itemmember
+{
+	border-color:#C00000;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+	color:#666666;
+}
+.itemmember  a:link
+{
+	border-color:#C00000;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+	color:#666666;
+}
+.itemmember  a:visited
+{
+	border-color:#C00000;
+	border-style:none;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+	color:#666666;
+}
+.pagermember
+{
+	border-color:#3366CC;
+	background-color:Silver;
+	border-style:dotted;
+	border-width:1px;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	color:White;
+	text-align:center;
+	vertical-align:middle;	
+}
+.selectedmember
+{
+	background-color:Transparent;
+	border-color:#3366CC;
+	border-style:none;
+	border-width:1px;
+	color:White;
+	font-size:x-small;
+	font-family:Tahoma;
+	font-style:oblique;
+	font-variant:normal;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.membererror
+{
+color:red;
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+border-color:white;
+background-color:transparent;
+border-style:none;
+border-width:1px;
+
+}
+.memberlabel
+{
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+
+}
+.memberlabel a:link
+{
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+
+}
+.membertext
+{
+border:1px window-inset royalblue;
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+border-style:dashed;
+border-width:1px;
+border-color:000080;
+color:5d5d5d;
+background-color:c0c0c0;
+
+}
+.uservalmember
+{
+font-family:tahoma;
+text-align:right;
+font-size:x-small;
+color:9900ff;
+
+}
+.memberbutton
+{
+color:4f4f4f;
+font-family:tahoma;
+font-size:x-small;
+cursor:hand;
+background-image:url(c:\inetpub\wwwroot\dorsapax6.5.4.1/data/template/skin1/img/picxpbytd);
+
+}
+.memberlogof
+{
+color:ff6600;
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+border-width:0px;
+border-style:none;
+background-color:transparentcursor:hand;
+
+}
+.memberlogof a:link
+{
+color:ff6600;
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+border-width:0px;
+border-style:none;
+background-color:transparentcursor:hand;
+
+}
+.memberforget
+{
+color:ff6600;
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+border-width:0px;
+border-style:none;
+background-color:transparentcursor:hand;
+
+}
+.memberforget a:link
+{
+color:ff6600;
+font-family:tahoma;
+font-size:x-small;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+border-width:0px;
+border-style:none;
+background-color:transparentcursor:hand;
+
+}
+.membercaptcha
+{
+	width:100px;
+	height:30px;
+
+}

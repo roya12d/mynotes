@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+table.k-table-english-ltr { 
+	direction:ltr;
+}
+
+table.k-table-english-ltr tr:nth-of-type(odd) { 
+	/* background:#eee; */
+}
+
+table.k-table-english-ltr th { 
+    /* 
+	background:#090; 
+	color:white; 
+	font-weight:bold; 
+	*/
+}
+
+table.k-table-english-ltr td, th { 
+	text-align:left;
+}
+
+table.k-table-english-ltr a{
+	/* 
+	color:#06C;
+	font-size:13px;
+	*/
+}
+
+table.k-table-english-ltr a:hover{
+	/* color:#F36; */
+}
